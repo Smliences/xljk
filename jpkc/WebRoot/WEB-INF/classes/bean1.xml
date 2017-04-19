@@ -16,7 +16,7 @@
 	  <!-- 使用 annotation -->  
     <context:annotation-config />  
     <!-- 使用 annotation 自动注册bean,并检查@Controller, @Service, @Repository注解已被注入 -->   
-    <context:component-scan base-package="cn.itcast" /> 
+    <context:component-scan base-package="com.jpkc.ssh.*" /> 
 	<!-- 配置c3p0连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<!-- 注入属性值 -->
@@ -32,7 +32,7 @@
 		<property name="dataSource" ref="dataSource"></property>
 		
 		<!-- 指定使用hibernate核心配置文件 -->
-		<property name="configLocations" value="classpath:hibernate.cfg.xml"></property> 
+	<!-- 	<property name="configLocations" value="classpath:hibernate.cfg.xml"></property>  -->
 		
 		<!-- 配置hibernate基本信息 -->
 		<property name="hibernateProperties">
@@ -43,20 +43,21 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 			</props>
 		</property>
-	<!-- 	<property name="mappingResources">
+		<property name="mappingResources">
 			<list>
 				
-				<value></value>
-				<value></value>
+				<value>com/jpkc/ssh/entity/Question.hbm.xml</value>
+				<value>com/jpkc/ssh/entity/Reply.hbm.xml</value>
+				<value>com/jpkc/ssh/entity/User.hbm.xml</value>
 			</list>
-		</property> -->
-		  <property name="packagesToScan">  
+		</property> 
+	<!-- 	  <property name="packagesToScan">  
             <list>  
                 <value>cn.itcast.*</value>  
             </list>  
         </property>
 	
-	
+	 -->
 		
 	</bean>
 	
@@ -74,6 +75,8 @@
 		<!-- 注入sessionFactory -->
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+
 
 	
 </beans>
