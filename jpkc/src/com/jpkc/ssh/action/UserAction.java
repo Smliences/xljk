@@ -20,7 +20,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	}
 	
 	public String regist() throws Exception{
-		userService.save(user);
+		if(user.getRole()==false){
+			user.setStatus(false);
+			userService.save(user);
+		}else{
+			user.setStatus(true);
+			userService.save(user);
+		}
 		return "login";
 	}
+	
 }

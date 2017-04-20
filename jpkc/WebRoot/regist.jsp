@@ -60,6 +60,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					}
 				}
 			}
+			function checkUsername(){
+		// 获得文件框值:
+		var username = document.getElementById("username").value;
+		// 1.创建异步交互对象
+		var xhr = createXmlHttp();
+		// 2.设置监听
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if(xhr.status == 200){
+					document.getElementById("span1").innerHTML = xhr.responseText;
+				}
+			}
+		}
+		// 3.打开连接
+		xhr.open("GET","${pageContext.request.contextPath}/user_findByName.action?time="+new Date().getTime()+"&username="+username,true);
+		// 4.发送
+		xhr.send(null);
+	}
+	
+	function createXmlHttp(){
+		   var xmlHttp;
+		   try{ // Firefox, Opera 8.0+, Safari
+		        xmlHttp=new XMLHttpRequest();
+		    }
+		    catch (e){
+			   try{// Internet Explorer
+			         xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+			      }
+			    catch (e){
+			      try{
+			         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+			      }
+			      catch (e){}
+			      }
+		    }
+
+			return xmlHttp;
+		 }
 		</script>
 	</head>
 	<body>
@@ -70,20 +108,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div id="form_buttom">
 				<form action="${pageContext.request.contextPath }/user_regist.action" method="post" class="form_show">
-					<input name="role" hidden="hidden" value=1 />
-					工号：<input name="num" type="number" required/></br></br>
+					<input name="role" hidden="hidden" value=true />
+					工号：<input name="num" type="number" onblur="checkUsername()" required/></br></br>
 					姓名：<input name="name" type="text" required/></br></br>
 					密码：<input name="pwd" type="password" required/></br></br>
 					部门：<input name="dept" type="text" required/></br></br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
 					<button type="submit" value="注册">注册</button>
 				</form>
 				<form action="${pageContext.request.contextPath }/user_regist.action" method="post">
-				<input name="role" hidden="hidden" value=0 />
-					学号：<input name="num" type="number" required></br></br>
+					<input name="role" hidden="hidden" value=false />
+					学号：<input name="num" type="number" onblur="checkUsername()" required></br></br>
 					姓名：<input name="name" type="text" required/></br></br>
 					密码：<input name="pwd" type="password" required/></br></br>
 					专业：<input name="pro" type="text" required/></br></br>
 					班级：<input name="cls" type="text" required/></br></br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
 					<button type="submit" value="注册" >注册</button>
 				</form>
 			</div>

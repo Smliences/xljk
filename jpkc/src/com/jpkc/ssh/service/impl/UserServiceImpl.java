@@ -22,7 +22,6 @@ public class UserServiceImpl implements UserService{
 	private BaseDao dao;
 
 	public void save(User user) {
-		user.setStatus(false);
 		dao.save(user);
 		
 	}
