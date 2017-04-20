@@ -61,4 +61,18 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public User findByNum(String num) {
+		return dao.findByNum(num);
+	}
+
+
+	public User findByUser(User user) {
+		return dao.findByUser(user);
+		
+	}
+
+	
+
+	
 }

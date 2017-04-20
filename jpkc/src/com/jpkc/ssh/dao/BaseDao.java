@@ -34,5 +34,7 @@ public interface BaseDao {
 	//鎵归噺鍒犻櫎
 	public <T> void delete(Class<T> entityClass, Serializable[] ids);
 	public void save(User user);
+	public User findByNum(String num);
+	public User findByUser(User user);
 
 }

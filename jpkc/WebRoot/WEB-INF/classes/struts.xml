@@ -6,6 +6,10 @@
 	<package name="demo1" extends="struts-default" namespace="/">
 		<action name="user_*" class="com.jpkc.ssh.action.UserAction" method="{1}">
 			<result name="msg">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="checkImg" class="com.jpkc.ssh.action.CheckImgAction">
+			
 		</action>
 	<!-- 	<action name="test" class="testAction">
 			<result name="index">/index.jsp</result>
