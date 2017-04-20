@@ -43,7 +43,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 			userService.save(user);
 		}
 		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("registsuccess", "×¢²á³É¹¦");
+		request.setAttribute("registsuccess", "×¢ï¿½ï¿½É¹ï¿½");
 		return "login";
 	}
 	
@@ -52,9 +52,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=UTF-8");
 		if(existuser!=null){
-			response.getWriter().println("<font color='red'>ÓÃ»§ÃûÒÑ¾­´æÔÚ</font>");
+			response.getWriter().println("<font color='red'>ç”¨æˆ·åå·²å­˜åœ¨ï¼</font>");
 		}else {
-			response.getWriter().println("<font color='green'>ÓÃ»§Ãû¿ÉÒÔÊ¹ÓÃ</font>");
+			response.getWriter().println("<font color='green'>ç”¨æˆ·åå¯ä»¥ä½¿ç”¨</font>");
 		}
 		return NONE;
 	}
