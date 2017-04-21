@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.User;
@@ -43,7 +43,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 			userService.save(user);
 		}
 		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("registsuccess", "ע��ɹ�");
+		request.setAttribute("registsuccess", "注册成功");
 		return "login";
 	}
 	

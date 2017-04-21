@@ -11,10 +11,15 @@
 		<action name="checkImg" class="com.jpkc.ssh.action.CheckImgAction">
 			
 		</action>
-	<!-- 	<action name="test" class="testAction">
-			<result name="index">/index.jsp</result>
-		</action>	
-		 -->
+		<action name="fileUpload" class="com.jpkc.ssh.action.FileUploadAction">
+			<result name="msg">/index.jsp</result>
+		</action>
+		<action name="fileDownload" class="com.jpkc.ssh.action.FileDownloadAction">
+            <result name="success" type="stream">
+                <param name="contentDisposition">attachment;filename="通讯录2012年9月4日.xls"</param>
+                <param name="inputName">downloadFile</param>
+            </result>
+        </action>
 	
 	</package>
 	

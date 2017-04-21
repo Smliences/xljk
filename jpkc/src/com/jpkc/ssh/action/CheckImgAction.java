@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 
 import org.apache.struts2.ServletActionContext;
+import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -19,6 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author ä¼ æº.é­å
  * 
  */
+@Controller
 public class CheckImgAction extends ActionSupport {
 
 	@Override
