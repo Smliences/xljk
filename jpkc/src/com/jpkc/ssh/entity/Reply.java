@@ -1,6 +1,6 @@
 package com.jpkc.ssh.entity;
 
-import java.sql.Timestamp;
+
 
 
 /**
@@ -17,7 +17,7 @@ public class Reply  implements java.io.Serializable {
      private Question question;
      private Integer touser;
      private String content;
-     private Timestamp rtime;
+     private String rtime;
 
 
     // Constructors
@@ -27,7 +27,7 @@ public class Reply  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
-    public Reply(User user, Question question, String content, Timestamp rtime) {
+    public Reply(User user, Question question, String content, String rtime) {
         this.user = user;
         this.question = question;
         this.content = content;
@@ -35,7 +35,7 @@ public class Reply  implements java.io.Serializable {
     }
     
     /** full constructor */
-    public Reply(User user, Question question, Integer touser, String content, Timestamp rtime) {
+    public Reply(User user, Question question, Integer touser, String content, String rtime) {
         this.user = user;
         this.question = question;
         this.touser = touser;
@@ -86,11 +86,11 @@ public class Reply  implements java.io.Serializable {
         this.content = content;
     }
 
-    public Timestamp getRtime() {
+    public String getRtime() {
         return this.rtime;
     }
     
-    public void setRtime(Timestamp rtime) {
+    public void setRtime(String rtime) {
         this.rtime = rtime;
     }
    
