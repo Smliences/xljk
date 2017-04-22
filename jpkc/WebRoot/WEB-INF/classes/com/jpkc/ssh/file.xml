@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+  	<package name="file" namespace="/" extends="struts-default">
+  		<action name="download" class="com.jpkc.ssh.action.DownloadAction">
+			<result type="stream" name="success">
+				<param name="contentType">${mimeType}</param>
+				<param name="inputName">inStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+			</result>
+			<result name="error">WEB-INF/jsp/error.jsp</result>
+		</action> 
+		
+		<action name="upload" class="com.jpkc.ssh.action.UploadAction">
+			<result name="success">WEB-INF/jsp/success.jsp</result>
+			
+			<!-- <interceptor-ref name="fileUpload">
+			    <param name="maximumSize">500000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" /> -->
+		</action>
+		
+		<action name="file_*" class="com.jpkc.ssh.action.FileAction" method="{1}">
+			<result name="success">WEB-INF/jsp/file.jsp</result>
+		</action>
+		
+  	</package>
+  	
+
+</struts>

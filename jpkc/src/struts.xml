@@ -3,16 +3,10 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="demo1" extends="struts-default" namespace="/">
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	
-	<!-- 	<action name="test" class="testAction">
-			<result name="index">/index.jsp</result>
-		</action>	
-		 -->
-	
-	</package>
-	
-	<!-- <include file=""></include> -->
+	<include file="com/jpkc/ssh/file.xml"></include>
 </struts>
 
 

@@ -6,7 +6,7 @@
   <head>
 
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>error</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,16 +18,6 @@
   </head>
   
   <body>
-    <a href="${pageContext.request.contextPath}/download.action?filename=测试.txt&fileFlag=ECA4BC3F75EA417685415A3D527ACBBC">点击下载</a>
-  
-  	<form action="${pageContext.request.contextPath}/upload.action" method="post" enctype="multipart/form-data">
-  		<input type="text" name="username" >
-  		<input type="file" name="upload">
-  		<input type="submit" value="上传">
-  	</form>
-  	
-  	
-  
-  
+  文件不存在
   </body>
 </html>
