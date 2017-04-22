@@ -17,6 +17,12 @@
   
   <body>
 	  <table border="1px solid">
+	  	<tr>
+	  		<td>学生姓名</td>
+    		<td>作业标记</td>
+    		<td>作业名称</td>
+    		<td colspan="2">操作</td>
+	  	</tr>
 	    	<s:iterator value="fileMessage">
 	    		<tr>
 		    		<td><s:property value="username"/></td>

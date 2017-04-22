@@ -18,8 +18,6 @@
   </head>
   
   <body>
-    <a href="${pageContext.request.contextPath}/download.action?filename=测试.txt&fileFlag=ECA4BC3F75EA417685415A3D527ACBBC">点击下载</a>
-  
   	<form action="${pageContext.request.contextPath}/upload.action" method="post" enctype="multipart/form-data">
   		<input type="text" name="username" >
   		<input type="file" name="upload">
