@@ -92,20 +92,25 @@ public class BaseDaoImpl implements BaseDao{
 		hibernateTemplate.save(user);
 	}
 
-	public User findByNum(String num) {
-		List<User> list = (List<User>) hibernateTemplate.find("from User where num=?", num);
+	public <T> T findByNum(String num) {
+		List<T> list = (List<T>) hibernateTemplate.find("from User where num=?", num);
 		if(list!=null&&list.size()>0){
 			return list.get(0);
 		}		
 		return null;
 	}
 
-	public User findByUser(User user) {
-		List<User> list = (List<User>) hibernateTemplate.find("from User where num=? and  pwd=?", user.getNum(),user.getPwd());
+	public <T> T findByUser(T entity) {
+		List<T> list = (List<T>) hibernateTemplate.find("from User where num=? and  pwd=?", entity.getNum(),entity.getPwd());
 		if(list!=null&&list.size()>0){
 			return list.get(0);
 		}		
 		return null;
+	}
+
+	public <T> void save(T entity) {
+	
+		
 	}
 
 

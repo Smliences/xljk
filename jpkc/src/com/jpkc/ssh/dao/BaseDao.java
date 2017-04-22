@@ -33,8 +33,8 @@ public interface BaseDao {
 	public <T> void deleteById(Class<T> entityClass, Serializable id);
 	//鎵归噺鍒犻櫎
 	public <T> void delete(Class<T> entityClass, Serializable[] ids);
-	public void save(User user);
-	public User findByNum(String num);
-	public User findByUser(User user);
+	public <T> void save(T entity);
+	public <T> T findByNum(String num);
+	public <T> T findByUser(T entity);
 
 }

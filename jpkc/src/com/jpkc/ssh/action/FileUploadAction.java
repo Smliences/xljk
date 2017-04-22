@@ -58,11 +58,11 @@ public class FileUploadAction extends ActionSupport
     @Override
     public String execute() throws Exception
     {
-        String root = ServletActionContext.getServletContext().getRealPath("/upload");
+        String qwe = ServletActionContext.getServletContext().getRealPath("/upload");
         
         InputStream is = new FileInputStream(file);
         
-        OutputStream os = new FileOutputStream(new File(root, fileFileName));
+        OutputStream os = new FileOutputStream(new File(qwe, fileFileName));
         
         System.out.println("fileFileName: " + fileFileName);
 
@@ -78,8 +78,8 @@ public class FileUploadAction extends ActionSupport
             os.write(buffer);
         }
         
-        os.close();
         is.close();
+        os.close();
         
         return "msg";
     }

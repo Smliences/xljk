@@ -1,5 +1,7 @@
 package com.jpkc.ssh.action;
 
+import java.text.SimpleDateFormat;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -72,4 +74,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		return "login";
 		
 	}
+	SimpleDateFormat s = new SimpleDateFormat()
+	Date date = new Date().getTime();
 }

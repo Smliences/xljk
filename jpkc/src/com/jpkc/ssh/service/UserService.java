@@ -7,8 +7,6 @@ public interface UserService extends BaseDao{
 
 	void save(User user);
 
-	User findByNum(String num);
 
-	User findByUser(User user);
 	
 }

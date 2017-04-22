@@ -21,8 +21,8 @@ public class UserServiceImpl implements UserService{
 	@Resource
 	private BaseDao dao;
 
-	public void save(User user) {
-		dao.save(user);
+	public <T> void save(T entity) {
+		dao.save(entity);
 		
 	}
 
@@ -67,8 +67,15 @@ public class UserServiceImpl implements UserService{
 	}
 
 
-	public User findByUser(User user) {
-		return dao.findByUser(user);
+	public <T> T findByUser(T entity) {
+		return dao.findByUser(entity);
+		
+	}
+
+	
+
+	public void save(User user) {
+		// TODO Auto-generated method stub
 		
 	}
 
