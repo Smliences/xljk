@@ -14,6 +14,11 @@
 		<action name="question_*" class="com.jpkc.ssh.action.QuestionAction" method="{1}">
 			<result name="qlist">/questionlist.jsp</result>
 			<result name="input">/error.jsp</result>
+			<result name="lt">/publish.jsp</result>
+			<result name="detail">/details.jsp</result>
+		</action>
+		<action name="reply_*" class="com.jpkc.ssh.action.ReplyAction" method="{1}">
+			
 		</action>
 	<!-- 	<action name="test" class="testAction">
 			<result name="index">/index.jsp</result>

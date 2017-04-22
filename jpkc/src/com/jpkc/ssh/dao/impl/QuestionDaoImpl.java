@@ -38,6 +38,15 @@ public class QuestionDaoImpl implements QuestionDao{
 		}
 		return null;
 	}
+
+	public Question findById(Integer qid) {
+		// TODO Auto-generated method stub
+		List<Question> list = (List<Question>) hibernateTemplate.find("from Question where qid= ?",qid);
+		if(list!=null&&list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
 	
 	
 	

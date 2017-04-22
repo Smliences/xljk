@@ -10,4 +10,6 @@ public interface QuestionDao {
 
 	List<Question> findAll();
 
+	Question findById(Integer qid);
+
 }

@@ -8,13 +8,8 @@
 </head>
 <body>
 欢迎       ${existUser.name}
-<form action="${pageContext.request.contextPath }/question_publish.action"
+<form action="${pageContext.request.contextPath }/question_toLT.action"
 method = "post">
-
-标题:<input type="text" name="title" /><br/>
-内容:<input type="text" name="content"/><br/>
-
-
 <input type="submit" value="提交"/>
 </form>
 	

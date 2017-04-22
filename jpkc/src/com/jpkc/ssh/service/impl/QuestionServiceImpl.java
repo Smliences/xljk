@@ -27,6 +27,12 @@ public class QuestionServiceImpl implements QuestionService{
 		List<Question> list = questionDao.findAll();
 		return list;
 	}
+	public Question findById(Integer qid) {
+		Question question = questionDao.findById(qid);
+		
+		return question;
+		
+	}
 	
 	
 

@@ -2,16 +2,30 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<c:forEach items="${questionList }" var="l">
-
-	<div>${l.title }<div>
-</c:forEach>
-</body>
+	<head>
+		<meta charset="GBK">
+		<title>师生交流论坛</title>
+		<link rel="stylesheet" type="text/css" href="css/review.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box_top">师生交流论坛</div>
+			<div class="box_buttom">
+			<c:forEach items="${questionList }" var="l">
+				<div class="box_content">
+					<a href="${pageContext.request.contextPath }/question_detail.action?qid=${l.qid }">${l.title }</a>
+				</div>
+			</c:forEach>
+				
+			</div>
+		</div>
+	</body>
 </html>
+
+
+
+
+	
+

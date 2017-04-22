@@ -16,7 +16,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 @Controller
-public class QuestionAction extends ActionSupport implements ModelDriven<Question> {
+public class ReplyAction extends ActionSupport implements ModelDriven<Question> {
 	@Resource
 	private QuestionService questionService;
 	private Question question  = new Question();

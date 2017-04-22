@@ -13,6 +13,8 @@ public interface QuestionService extends QuestionDao{
 
 	List<Question> findAll();
 
+	Question findById(Integer qid);
+
 	
 
 	
