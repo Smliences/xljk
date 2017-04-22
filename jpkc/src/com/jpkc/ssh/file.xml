@@ -5,7 +5,7 @@
 
 <struts>
   	<package name="file" namespace="/" extends="struts-default">
-  		<action name="download" class="com.jpkc.ssh.action.DownloadAction">
+  		<action name="download" class="downloadAction">
 			<result type="stream" name="success">
 				<param name="contentType">${mimeType}</param>
 				<param name="inputName">inStream</param>
@@ -14,7 +14,7 @@
 			<result name="error">WEB-INF/jsp/error.jsp</result>
 		</action> 
 		
-		<action name="upload" class="com.jpkc.ssh.action.UploadAction">
+		<action name="upload" class="uploadAction">
 			<result name="success">WEB-INF/jsp/success.jsp</result>
 			
 			<!-- <interceptor-ref name="fileUpload">
@@ -23,8 +23,9 @@
 			<interceptor-ref name="defaultStack" /> -->
 		</action>
 		
-		<action name="file_*" class="com.jpkc.ssh.action.FileAction" method="{1}">
-			<result name="success">WEB-INF/jsp/file.jsp</result>
+		<action name="file_*" class="fileAction" method="{1}">
+			<result name="list">WEB-INF/jsp/file.jsp</result>
+			<result name="tolist" type="redirectAction">file_getAllFileMessage.action</result>
 		</action>
 		
   	</package>

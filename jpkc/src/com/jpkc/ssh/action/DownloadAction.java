@@ -7,10 +7,14 @@ import java.io.UnsupportedEncodingException;
 import javax.servlet.ServletContext;
 
 import org.apache.struts2.util.ServletContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.util.FileUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Controller("downloadAction")
+@Scope("prototype")
 public class DownloadAction extends ActionSupport implements ServletContextAware {
 	private static final long serialVersionUID = 1L;
 

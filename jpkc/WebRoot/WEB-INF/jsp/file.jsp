@@ -23,6 +23,7 @@
 		    		<td><s:property value="fileflag"/></td>
 		    		<td><s:property value="filename"/></td>
 		    		<td><s:a action="download.action?filename=%{filename}&fileFlag=%{fileflag}">下载</s:a></td>
+		    		<td><s:a action="file_deleteFile.action?fileflag=%{fileflag}">删除</s:a></td>
 	    		</tr>
 	    	</s:iterator>
 	   </table>

@@ -6,10 +6,14 @@ import javax.servlet.ServletContext;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.util.ServletContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.util.FileUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Controller("uploadAction")
+@Scope("prototype")
 public class UploadAction extends ActionSupport implements ServletContextAware{
     
 	private static final long serialVersionUID = -371529801135206288L;
