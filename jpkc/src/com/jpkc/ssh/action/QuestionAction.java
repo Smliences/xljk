@@ -1,8 +1,8 @@
 package com.jpkc.ssh.action;
 
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import com.jpkc.ssh.entity.Question;
 import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.service.QuestionService;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 @Controller
@@ -33,7 +34,8 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		User user = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
 		question.setUser(user);
 		questionService.save(question);
-		
+		List<Question> questionList = questionService.findAll();
+		ActionContext.getContext().put("questionList",questionList );
 		return "qlist";
 	}
 	

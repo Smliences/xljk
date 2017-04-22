@@ -1,6 +1,8 @@
 package com.jpkc.ssh.service.impl;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +21,11 @@ public class QuestionServiceImpl implements QuestionService{
 		// TODO Auto-generated method stub
 		
 		questionDao.save(question);
+	}
+	public List<Question> findAll() {
+		// TODO Auto-generated method stub
+		List<Question> list = questionDao.findAll();
+		return list;
 	}
 	
 	
