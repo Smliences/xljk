@@ -1,6 +1,7 @@
 package com.jpkc.ssh.action;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
-
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.User;
@@ -74,6 +74,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		return "login";
 		
 	}
-	SimpleDateFormat s = new SimpleDateFormat()
-	Date date = new Date().getTime();
+	SimpleDateFormat s = new SimpleDateFormat();
+	
+	long date = new Date().getTime();
+	
+	String str = s.format(date);
+	
+	
 }
