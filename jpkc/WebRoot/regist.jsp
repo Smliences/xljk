@@ -6,46 +6,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>form</title>
-		<style>
-			*{
-				padding: 0px;
-				margin: 0px;
-			}
-			#box{
-				width: 247px;
-				height: 300px;
-				margin: auto;
-				border: 1px solid #CCCCCC;
-			}
-			#form_top p{
-				width: 123px;
-				line-height: 30px;
-				text-align: center;
-				float: left;
-				background: #E5E5E5;
-				cursor: pointer;
-			}
-			#form_buttom{
-				background: #FFFFFF;
-			}
-			#form_buttom form{
-				width: 247px;
-				height: 210px;
-				display: none;
-				margin-top: 50px;
-			}
-		
-			#form_top .p_show{
-				background: #FFFFFF;
-			}
-			#form_buttom .form_show{
-				display: block;
-			}
-		</style>
-		<script>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/registered.css" />
+	</head>
+	<body>
+		<div class="registered_p">用户注册</div>	
+		<div class="hr"></div>
+		<div id="box">
+			<div id="form_top">
+				<p class="p_show">老师注册</p>
+				<p>学生注册</p>
+			</div>
+			<div id="form_buttom">
+				<form action="${pageContext.request.contextPath }/user_regist.action" class="form_show">
+					<input name="role" hidden="hidden" value=true />
+					<span1 id="span1"></span1><br/>
+					工&nbsp;号：<input name="num" id="num" type="number" onblur="checkUserNum()" autofocus required/><br>
+					姓&nbsp;名：<input name="name" type="text" required/><br>
+					密&nbsp;码：<input name="pwd" type="password" required/><br>
+					部&nbsp;门：<input name="dept" type="text" required/><br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br>
+					<input class="submit" type="submit" value="提交">
+					<div class="goLogin"><a href="${pageContext.request.contextPath }/login.jsp">去登陆</a></div>
+				</form>
+				<form action="${pageContext.request.contextPath }/user_regist.action" method="post">
+					<input name="role" hidden="hidden" value=false />
+					<span1 id="span2"></span1><br/>
+					学&nbsp;号：<input name="num" id="num1" type="number" onblur="checkUserNum1()" autofocus required/><br>
+					姓&nbsp;名：<input name="name" type="text" required/><br>
+					密&nbsp;码：<input name="pwd" type="password" required/><br>
+					专&nbsp;业：<input name="pro" type="text" required/><br>
+					班&nbsp;级：<input name="cls" type="text" required/><br>
+					<input name="dept" type="text" hidden="hidden" value=""/></br>
+					<input class="submit" type="submit" value="提交">
+					<div class="goLogin"><a href="${pageContext.request.contextPath }/login.jsp">去登陆</a></div>
+						
+					
+					
+				</form>
+			</div>
+		</div>
+	</body>
+	
+	<script>
 			window.onload = function(){
+				var ps = document.getElementsByTagName("p");
+				var forms = document.getElementById("form_buttom").getElementsByTagName("form");
+				for(var i = 0;i < ps.length;i++){
+					ps[i].index = i;
+					ps[i].onclick = function(){
+						for(var j = 0;j < ps.length;j++){
+							ps[j].className = "";
+							forms[j].className = "";
+						}
+						this.className = "p_show";
+						forms[this.index].className = "form_show";
+					}
+				}
+			}
+						window.onload = function(){
 				var ps = document.getElementsByTagName("p");
 				var forms = document.getElementById("form_buttom").getElementsByTagName("form");
 				for(var i = 0;i < ps.length;i++){
@@ -122,37 +143,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			return xmlHttp;
 		 }
 		</script>
-	</head>
-	<body>
-		<div id="box">
-			<div id="form_top">
-				<p class="p_show">老师注册</p>
-				<p>学生注册</p>
-			</div>
-			<div id="form_buttom">
-				<form action="${pageContext.request.contextPath }/user_regist.action" method="post" class="form_show">
-					<input name="role" hidden="hidden" value=true />
-					<span1 id="span1"></span1><br/>
-					工号：<input id="num" name="num" type="number" onblur="checkUserNum()" required/></br></br>
-					姓名：<input name="name" type="text"  required/></br></br>
-					密码：<input name="pwd" type="password" required/></br></br>
-					部门：<input name="dept" type="text" required/></br></br>
-					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
-					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
-					<button type="submit" value="注册">注册</button>
-				</form>
-				<form action="${pageContext.request.contextPath }/user_regist.action" method="post">
-					<input name="role" hidden="hidden" value=false />
-					<span1 id="span2"></span1><br/>	
-					学号：<input id="num1" name="num" type="number" onblur="checkUserNum1()" required></br></br>
-					姓名：<input name="name" type="text" required/></br></br>
-					密码：<input name="pwd" type="password" required/></br></br>
-					专业：<input name="pro" type="text" required/></br></br>
-					班级：<input name="cls" type="text" required/></br></br>
-					<input name="dept" type="text" hidden="hidden" value=""/></br></br>
-					<button type="submit" value="注册" >注册</button>
-				</form>
-			</div>
-		</div>
-	</body>
 </html>

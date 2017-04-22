@@ -19,8 +19,8 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="65535" not-null="true" />
         </property>
-        <property name="wtime" type="java.sql.Timestamp">
-            <column name="wtime" length="19" not-null="true" />
+        <property name="wtime" type="java.lang.String">
+            <column name="wtime" length="60" not-null="true" />
         </property>
         <set name="replies" inverse="true">
             <key>
