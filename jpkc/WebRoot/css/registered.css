@@ -1,0 +1,97 @@
+body {
+	width: 70%;
+	margin: auto;
+}
+*{
+	padding: 0px;
+	margin: 0px;
+}
+a{
+	text-decoration: none;
+}
+.registered_p {
+	font-size: 30px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 5%;
+}
+
+.hr {
+	width: 100%;
+	height: 2px;
+	background: #ccc;
+	float: left;
+	margin-top: 30px;
+}
+
+#box{
+	width: 550px;
+	height: 400px;
+	float: left;
+	margin-left: 25%;
+	margin-top: 40px;
+	background: rgba(168,237,234,0.3);
+	
+}
+#form_top{
+	width: 100%;
+	height: 50px;
+	/*background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);*/
+	cursor: pointer;
+}
+#form_top p{
+	float: left;
+	width:50%;
+	height: 50px;
+	background: rgba(254,214,227,0.8);
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+#form_buttom {
+	width: 100%;
+	height: 350px;
+	
+}
+#form_buttom form{
+	margin-top: 40px;
+	margin-left: 23%;
+	font-size: 18px;
+	line-height: 40px;
+	display: none;
+}
+#form_buttom input{
+	height:25px ;
+	width: 230px;
+	line-height: 40px;
+}
+#form_buttom .form_show{
+	display: block;
+}
+#form_top .p_show{
+	background: rgba(168,237,234,0);
+}
+#form_buttom .submit{
+	height:35px;
+	border: none;
+	width: 310px;
+	margin-top: 30px;
+	cursor: pointer;
+	font-size: 17px;
+	letter-spacing: 15px;
+	line-height: 35px;
+	background:linear-gradient(to top, #fed6e3, #a8edea  );
+    /*width: 80px;
+    height: 25px;
+    
+    margin-left: 35px;
+    border-radius: 5px;
+    background:linear-gradient(to right, #4e9ccc ,#49eafc ,#4e9ccc );
+    */
+}
+#form_buttom .goLogin{
+	float: left;
+	float: right;
+	margin-top: 70px;
+	margin-right: 20px;
+}
