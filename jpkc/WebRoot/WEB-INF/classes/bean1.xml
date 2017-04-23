@@ -23,7 +23,7 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 		<property name="jdbcUrl" value="jdbc:mysql:///jpkc"></property>
 		<property name="user" value="root"></property>
-		<property name="password" value="12345678"></property>
+		<property name="password" value="123"></property>
 	</bean>
 	
 	<!-- sessionFactory创建交给spring管理 -->
@@ -51,13 +51,7 @@
 				<value>com/jpkc/ssh/entity/User.hbm.xml</value>
 			</list>
 		</property> 
-	<!-- 	  <property name="packagesToScan">  
-            <list>  
-                <value>cn.itcast.*</value>  
-            </list>  
-        </property>
-	
-	 -->
+
 		
 	</bean>
 	

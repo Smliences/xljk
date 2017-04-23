@@ -2,7 +2,6 @@ package com.jpkc.ssh.entity;
 
 
 
-
 /**
  * Reply entity. @author MyEclipse Persistence Tools
  */
@@ -17,6 +16,7 @@ public class Reply  implements java.io.Serializable {
      private Question question;
      private Integer touser;
      private String content;
+
      private String rtime;
 
 
@@ -27,7 +27,9 @@ public class Reply  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
+
     public Reply(User user, Question question, String content, String rtime) {
+
         this.user = user;
         this.question = question;
         this.content = content;
@@ -35,7 +37,9 @@ public class Reply  implements java.io.Serializable {
     }
     
     /** full constructor */
+
     public Reply(User user, Question question, Integer touser, String content, String rtime) {
+
         this.user = user;
         this.question = question;
         this.touser = touser;
@@ -78,22 +82,25 @@ public class Reply  implements java.io.Serializable {
         this.touser = touser;
     }
 
-    public String getContent() {
-        return this.content;
-    }
-    
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getRtime() {
-        return this.rtime;
-    }
-    
-    public void setRtime(String rtime) {
-        this.rtime = rtime;
-    }
    
+
+    public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getRtime() {
+		return rtime;
+	}
+
+	public void setRtime(String rtime) {
+		this.rtime = rtime;
+	}
+
+
 
 
 

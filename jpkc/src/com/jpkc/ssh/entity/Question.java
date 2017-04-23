@@ -1,6 +1,7 @@
 package com.jpkc.ssh.entity;
 
 
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,11 @@ public class Question  implements java.io.Serializable {
      private User user;
      private String title;
      private String content;
+
      private String wtime;
+
+
+
      private Set replies = new HashSet(0);
 
 
@@ -29,14 +34,19 @@ public class Question  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
+
     public Question(String title, String content, String wtime) {
+
+
         this.title = title;
         this.content = content;
         this.wtime = wtime;
     }
     
     /** full constructor */
+
     public Question(User user, String title, String content, String wtime, Set replies) {
+
         this.user = user;
         this.title = title;
         this.content = content;
@@ -79,15 +89,18 @@ public class Question  implements java.io.Serializable {
         this.content = content;
     }
 
-    public String getWtime() {
-        return this.wtime;
-    }
-    
-    public void setWtime(String wtime) {
-        this.wtime = wtime;
-    }
 
-    public Set getReplies() {
+ 
+
+    public String getWtime() {
+		return wtime;
+	}
+
+	public void setWtime(String wtime) {
+		this.wtime = wtime;
+	}
+
+	public Set getReplies() {
         return this.replies;
     }
     

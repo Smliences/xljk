@@ -5,15 +5,16 @@ import java.util.List;
 import com.jpkc.ssh.dao.BaseDao;
 import com.jpkc.ssh.dao.QuestionDao;
 import com.jpkc.ssh.entity.Question;
+import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
 
-public interface QuestionService {
+public interface ReplyService{
 
-	void save(Question question);
+	void save(Reply reply);
 
-	List<Question> findAll();
+	List<Reply> findByQid(Integer i);
 
-	Question findById(Integer qid);
+	
 
 	
 
