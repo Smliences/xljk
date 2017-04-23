@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.jpkc.ssh.entity.Question;
 import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
@@ -56,8 +55,6 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		ActionContext.getContext().getValueStack().push(question);
 		List<Reply> replyList =  replyService.findByQid(i);
 		ServletActionContext.getContext().put("replyList", replyList);
-		
-		
 		return "detail";
 		
 		
