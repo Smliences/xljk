@@ -40,6 +40,7 @@
 	</head>
 
 	<body>
+	<!-- 选择文件自动提交 -->
 		<form action="${pageContext.request.contextPath}/upload.action" method="post" enctype="multipart/form-data">
 	  		<!-- 防止表单重复提交 -->
 	  		<s:token></s:token>
@@ -55,7 +56,7 @@
 				    a.style.top=event.clientY-10+'px';
 				}
 		</script>
-		
+		<!-- 传统表单提交 -->
 		<%-- <form id="form" action="${pageContext.request.contextPath}/upload.action" method="post" enctype="multipart/form-data">
 	  		<input type="hidden" name="username">
 	  		<input  id="uplaod" type="file" name="upload">
