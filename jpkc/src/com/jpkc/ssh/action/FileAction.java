@@ -18,6 +18,8 @@ import com.opensymphony.xwork2.ActionSupport;
 @Scope("prototype")
 public class FileAction extends ActionSupport implements ServletContextAware{
 	
+	private static final long serialVersionUID = 7070182080126242761L;
+
 	private ServletContext context;
 	
 	private String fileflag;
