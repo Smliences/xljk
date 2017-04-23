@@ -5,35 +5,48 @@
 
 <struts>
   	<package name="file" namespace="/" extends="struts-default">
+
   	<interceptors>
 		<interceptor name="interceptor" class="com.jpkc.ssh.interceptor.Interceptor"></interceptor>
 	</interceptors>
   		<action name="download" class="downloadAction">
   			<interceptor-ref name="interceptor"></interceptor-ref>
   			<interceptor-ref name="defaultStack"></interceptor-ref>
+
 			<result type="stream" name="success">
 				<param name="contentType">${mimeType}</param>
 				<param name="inputName">inStream</param>
 				<param name="contentDisposition">attachment;filename="${filename}"</param>
 			</result>
 			<result name="error">WEB-INF/jsp/error.jsp</result>
-		</action> 
-		
+		</action>
+
+
 		<action name="upload" class="uploadAction">
+		<interceptor-ref name="defaultStack"></interceptor-ref>
 			<interceptor-ref name="interceptor"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/uploadResult.jsp</result>
+			<result name="invalid.token" type="redirectAction">file_toUpload.action</result>
+			<!-- 防止表单重复提交 -->
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="success">WEB-INF/jsp/success.jsp</result>
-			<!-- <interceptor-ref name="fileUpload">
+			<interceptor-ref name="token"></interceptor-ref>
+			
+			<!-- 配置文件上传拦截器 -->
+			<!-- 
+			<interceptor-ref name="fileUpload">
 			    <param name="maximumSize">500000</param>
 			</interceptor-ref>
-			<interceptor-ref name="defaultStack" /> -->
+			<interceptor-ref name="defaultStack" /> 
+			-->
 		</action>
 		
 		<action name="file_*" class="fileAction" method="{1}">
-			<interceptor-ref name="interceptor"></interceptor-ref>
+		<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="list">WEB-INF/jsp/file.jsp</result>
+			<result name="list">/WEB-INF/jsp/fileList.jsp</result>
 			<result name="tolist" type="redirectAction">file_getAllFileMessage.action</result>
+			<result name="upload">/WEB-INF/jsp/fileUpload.jsp</result>
+
 		</action>
 		
   	</package>

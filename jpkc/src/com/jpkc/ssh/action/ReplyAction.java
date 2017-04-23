@@ -6,6 +6,10 @@ import java.util.Date;
 import javax.annotation.Resource;
 
 import org.apache.struts2.ServletActionContext;
+
+
+import org.springframework.context.annotation.Scope;
+
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.Question;
@@ -16,6 +20,9 @@ import com.jpkc.ssh.service.ReplyService;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 @Controller
+
+@Scope("prototype")
+
 public class ReplyAction extends ActionSupport implements ModelDriven<Reply> {
 	@Resource
 	private ReplyService replyService;

@@ -7,6 +7,10 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.struts2.ServletActionContext;
+
+
+import org.springframework.context.annotation.Scope;
+
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.Question;
@@ -18,6 +22,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 @Controller
+
+@Scope("prototype")
+
 public class QuestionAction extends ActionSupport implements ModelDriven<Question> {
 	@Resource
 	private QuestionService questionService;
@@ -55,6 +62,7 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		List<Reply> replyList =  replyService.findByQid(i);
 		ServletActionContext.getContext().put("replyList", replyList);
 		
+
 		return "detail";
 		
 		
