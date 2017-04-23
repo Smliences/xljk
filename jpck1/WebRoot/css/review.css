@@ -1,0 +1,78 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.box{
+	width: 70%;
+	margin: auto;
+	height: 700px;
+	background: #EDF7FD;
+}
+a{
+	text-decoration: none;
+}
+.title{
+	font-size: 20px;
+	letter-spacing: 10px;
+	width: 90%;
+	padding-top: 20px;
+	line-height: 50px;
+	margin: auto;
+}
+.title input{
+	width: 90%;
+	height: 25px;
+}
+.box_hr{
+	margin-top: 20px;
+	height: 2px;
+	width: 100%;
+	background: #ccc;
+}
+.content{
+	width: 90%;
+	margin: auto;
+	margin-top: 40px;
+	font-size: 20px;
+	letter-spacing: 10px;
+}
+.content_p{
+	float: left;
+}
+.content textarea{
+	font-size: 16px;
+	float:left;
+	width: 90%;
+}
+.submit{
+	font-size: 18px;
+	width: 100px;
+	height: 30px;
+	float:right;
+	margin-right: 8%;
+}
+
+
+/*index.css*/
+.box_top{
+	height: 45px;
+	width: 90%;
+	background: #0e397d;
+	font-size: 22px;
+	line-height: 45px;
+	padding-left: 10%;
+	color: #FFFFFF;
+}
+.box_buttom{
+	width: 80%;
+	margin:30px auto;
+}
+.box_content{
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px dotted #000000;
+	padding: 15px;
+}
+.box_content a{
+	font-size: 22px;
+}

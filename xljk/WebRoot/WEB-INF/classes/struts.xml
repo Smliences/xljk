@@ -4,7 +4,22 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="demo1" extends="struts-default" namespace="/">
-	
+		<action name="user_*" class="com.jpkc.ssh.action.UserAction" method="{1}">
+			<result name="msg">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="checkImg" class="com.jpkc.ssh.action.CheckImgAction">
+			
+		</action>
+		<action name="question_*" class="com.jpkc.ssh.action.QuestionAction" method="{1}">
+			<result name="qlist">/questionlist.jsp</result>
+			<result name="input">/error.jsp</result>
+			<result name="lt">/publish.jsp</result>
+			<result name="detail">/details.jsp</result>
+		</action>
+		<action name="reply_*" class="com.jpkc.ssh.action.ReplyAction" method="{1}">
+			<result name="reply">/details.jsp</result>
+		</action>
 	<!-- 	<action name="test" class="testAction">
 			<result name="index">/index.jsp</result>
 		</action>	
@@ -13,6 +28,10 @@
 	</package>
 	
 	<!-- <include file=""></include> -->
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<include file="com/jpkc/ssh/file.xml"></include>
 </struts>
 
 
