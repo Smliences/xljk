@@ -22,6 +22,20 @@ public class FileAction extends ActionSupport implements ServletContextAware{
 	
 	private String fileflag;
 	
+	/**
+	 * 跳转到上传页面
+	 * @return
+	 */
+	public String toUpload(){
+		String username = "测试";
+		ActionContext.getContext().put("username", username);
+		return "upload";
+	}
+	
+	/**
+	 * 获取所有文件信息
+	 * @return
+	 */
 	public String getAllFileMessage() {
 		String path = this.context.getRealPath("/upload");
 		Collection<Map<String, String>> list = FileUtil.getFileMessageFromDirectory(path);
@@ -29,12 +43,16 @@ public class FileAction extends ActionSupport implements ServletContextAware{
 		return "list";
 	}
 	
+	/**
+	 * 删除指定文件
+	 * @return
+	 * @throws IOException
+	 */
 	public String deleteFile() throws IOException{
 		String path = this.context.getRealPath("/upload");
 		FileUtil.deleteFile(path, fileflag);
 		return "tolist";
 	}
-	
 	
 	public String getFileflag() {
 		return fileflag;

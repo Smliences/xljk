@@ -11,21 +11,28 @@
 				<param name="inputName">inStream</param>
 				<param name="contentDisposition">attachment;filename="${filename}"</param>
 			</result>
-			<result name="error">WEB-INF/jsp/error.jsp</result>
 		</action> 
 		
 		<action name="upload" class="uploadAction">
-			<result name="success">WEB-INF/jsp/success.jsp</result>
+			<result name="success">/WEB-INF/jsp/result.jsp</result>
+			<result name="invalid.token" type="redirectAction">file_toUpload.action</result>
+			<!-- 防止表单重复提交 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="token"></interceptor-ref>
 			
-			<!-- <interceptor-ref name="fileUpload">
+			<!-- 配置文件上传拦截器 -->
+			<!-- 
+			<interceptor-ref name="fileUpload">
 			    <param name="maximumSize">500000</param>
 			</interceptor-ref>
-			<interceptor-ref name="defaultStack" /> -->
+			<interceptor-ref name="defaultStack" /> 
+			-->
 		</action>
 		
 		<action name="file_*" class="fileAction" method="{1}">
-			<result name="list">WEB-INF/jsp/file.jsp</result>
+			<result name="list">/WEB-INF/jsp/fileList.jsp</result>
 			<result name="tolist" type="redirectAction">file_getAllFileMessage.action</result>
+			<result name="upload">/WEB-INF/jsp/fileupload.jsp</result>
 		</action>
 		
   	</package>
