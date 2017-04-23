@@ -1,6 +1,10 @@
 package com.jpkc.ssh.entity;
 
+<<<<<<< HEAD
 
+=======
+import java.sql.Timestamp;
+>>>>>>> f54403e89853473c3e5f76fca2fc458f3ae52645
 
 
 /**
@@ -17,7 +21,11 @@ public class Reply  implements java.io.Serializable {
      private Question question;
      private Integer touser;
      private String content;
+<<<<<<< HEAD
      private String rtime;
+=======
+     private Timestamp rtime;
+>>>>>>> f54403e89853473c3e5f76fca2fc458f3ae52645
 
 
     // Constructors
@@ -27,7 +35,11 @@ public class Reply  implements java.io.Serializable {
     }
 
 	/** minimal constructor */
+<<<<<<< HEAD
     public Reply(User user, Question question, String content, String rtime) {
+=======
+    public Reply(User user, Question question, String content, Timestamp rtime) {
+>>>>>>> f54403e89853473c3e5f76fca2fc458f3ae52645
         this.user = user;
         this.question = question;
         this.content = content;
@@ -35,7 +47,11 @@ public class Reply  implements java.io.Serializable {
     }
     
     /** full constructor */
+<<<<<<< HEAD
     public Reply(User user, Question question, Integer touser, String content, String rtime) {
+=======
+    public Reply(User user, Question question, Integer touser, String content, Timestamp rtime) {
+>>>>>>> f54403e89853473c3e5f76fca2fc458f3ae52645
         this.user = user;
         this.question = question;
         this.touser = touser;
@@ -86,11 +102,19 @@ public class Reply  implements java.io.Serializable {
         this.content = content;
     }
 
+<<<<<<< HEAD
     public String getRtime() {
         return this.rtime;
     }
     
     public void setRtime(String rtime) {
+=======
+    public Timestamp getRtime() {
+        return this.rtime;
+    }
+    
+    public void setRtime(Timestamp rtime) {
+>>>>>>> f54403e89853473c3e5f76fca2fc458f3ae52645
         this.rtime = rtime;
     }
    

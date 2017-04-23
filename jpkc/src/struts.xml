@@ -23,6 +23,10 @@
 	</package>
 	
 	<!-- <include file=""></include> -->
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	
+	<include file="com/jpkc/ssh/file.xml"></include>
 </struts>
 
 
