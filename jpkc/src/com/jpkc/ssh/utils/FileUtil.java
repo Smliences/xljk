@@ -31,9 +31,6 @@ public class FileUtil {
 				}
 			}
 		}
-		else {
-			throw new RuntimeException(path + " is not a directory");
-		}
 		return list;
 	}
 

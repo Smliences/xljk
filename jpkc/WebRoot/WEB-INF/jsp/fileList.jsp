@@ -50,15 +50,23 @@
 					<th width="500px">提交时间</th>
 					<th width="120px" colspan="2">操作</th>
 				</tr>
-				<s:iterator value="fileMessage">
+				<s:if test="#fileMessage.size()==0">
 					<tr>
-						<td> <s:property value="username"/> </td>
-						<td> <s:property value="filename"/> </td>
-						<td> <s:property value="submitTime"/> </td>
-						<td> <s:a action="download.action?filename=%{filename}&fileFlag=%{fileflag}">下载</s:a> </td>
-		    			<td> <s:a action="file_deleteFile.action?fileflag=%{fileflag}">删除</s:a> </td>
-					</tr>
-				</s:iterator>
+						<td colspan="5" align="center">暂无学生提交作业</td>
+					</tr> 
+				</s:if>
+				
+				<s:else>
+					<s:iterator value="#fileMessage">
+						<tr>
+							<td> <s:property value="username"/> </td>
+							<td> <s:property value="filename"/> </td>
+							<td align="center"> <s:property value="submitTime"/> </td>
+							<td align="center"> <s:a action="download.action?filename=%{filename}&fileFlag=%{fileflag}">下载</s:a> </td>
+			    			<td align="center"> <s:a action="file_deleteFile.action?fileflag=%{fileflag}">删除</s:a> </td>
+						</tr>
+					</s:iterator>
+				</s:else>
 			</table>
 		</div>
 	</body>

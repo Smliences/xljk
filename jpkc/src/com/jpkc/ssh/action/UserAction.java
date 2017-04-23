@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.User;
@@ -14,12 +15,12 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Controller
+@Scope("prototype")
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	@Resource
 	private UserService userService;
 	private User user = new User();
 	public User getModel() {
-		// TODO Auto-generated method stub
 		return user;
 	}
 	private String checkcode;

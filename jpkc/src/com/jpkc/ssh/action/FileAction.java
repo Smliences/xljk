@@ -5,7 +5,9 @@ import java.util.Collection;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.util.ServletContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -29,7 +31,8 @@ public class FileAction extends ActionSupport implements ServletContextAware{
 	 * @return
 	 */
 	public String toUpload(){
-		String username = "测试";
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		String username = (String) session.getAttribute("existUser");
 		ActionContext.getContext().put("username", username);
 		return "upload";
 	}

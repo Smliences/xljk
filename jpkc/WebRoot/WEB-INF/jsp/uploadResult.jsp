@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>信息</title>
+		<title>上传成功</title>
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<style>
@@ -27,7 +27,7 @@
 	</head>
 	<body>
 		<div class="box">
-			<p>上传成功</p>
+			<p>你的作业已经上传成功！</p>
 		</div>
 	</body>
 </html>

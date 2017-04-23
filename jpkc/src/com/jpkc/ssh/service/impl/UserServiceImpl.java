@@ -71,8 +71,4 @@ public class UserServiceImpl implements UserService{
 		return dao.findByUser(user);
 		
 	}
-
-	
-
-	
 }
