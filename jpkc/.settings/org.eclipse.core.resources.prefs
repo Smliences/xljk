@@ -7,4 +7,5 @@ encoding//src/com/jpkc/ssh/action/CheckImgAction.java=UTF-8
 encoding//src/com/jpkc/ssh/dao/BaseDao.java=UTF-8
 encoding//src/com/jpkc/ssh/dao/impl/BaseDaoImpl.java=UTF-8
 encoding//src/com/jpkc/ssh/dao/impl/QuestionDaoImpl.java=UTF-8
+encoding//src/com/jpkc/ssh/dao/impl/ReplyDaoImpl.java=UTF-8
 encoding//src/com/jpkc/ssh/utils/Page.java=UTF-8

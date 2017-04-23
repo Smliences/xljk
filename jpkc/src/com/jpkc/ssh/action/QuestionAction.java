@@ -10,8 +10,10 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.Question;
+import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.service.QuestionService;
+import com.jpkc.ssh.service.ReplyService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -19,6 +21,8 @@ import com.opensymphony.xwork2.ModelDriven;
 public class QuestionAction extends ActionSupport implements ModelDriven<Question> {
 	@Resource
 	private QuestionService questionService;
+	@Resource
+	private ReplyService replyService;
 	private Question question  = new Question();
 	public Question getModel() {
 		// TODO Auto-generated method stub
@@ -48,6 +52,10 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		Integer i = Integer.valueOf(qid);
 		Question question = questionService.findById(i);
 		ActionContext.getContext().getValueStack().push(question);
+		List<Reply> replyList =  replyService.findByQid(i);
+		ServletActionContext.getContext().put("replyList", replyList);
+		
+		
 		return "detail";
 		
 		

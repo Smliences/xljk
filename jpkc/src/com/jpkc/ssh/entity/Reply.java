@@ -78,15 +78,17 @@ public class Reply  implements java.io.Serializable {
         this.touser = touser;
     }
 
-    public String getContent() {
-        return this.content;
-    }
-    
-    public void setContent(String content) {
-        this.content = content;
-    }
+   
 
-    public String getRtime() {
+    public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getRtime() {
         return this.rtime;
     }
     
