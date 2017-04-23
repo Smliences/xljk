@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.jpkc.ssh.entity.Question;
@@ -14,10 +15,12 @@ import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.service.QuestionService;
 import com.jpkc.ssh.service.ReplyService;
+import com.jpkc.ssh.utils.Page;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 @Controller
+@Scope("prototype")
 public class QuestionAction extends ActionSupport implements ModelDriven<Question> {
 	@Resource
 	private QuestionService questionService;
@@ -27,6 +30,18 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 	public Question getModel() {
 		// TODO Auto-generated method stub
 		return question;
+	}
+	private Page page = new Page();
+	public void setPage(Page page) {
+		this.page = page;
+	}
+
+	public Page getPage() {
+		return page;
+	}
+
+	public String toPublishPage(){
+		return "toPublishPage";
 	}
 	
 	public String publish(){
@@ -40,11 +55,13 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		questionService.save(question);
 		List<Question> questionList = questionService.findAll();
 		ActionContext.getContext().put("questionList",questionList );
-		return "qlist";
+		return "lt";
 	}
 	public String toLT(){
 		
-		
+		page = questionService.findPage("from Question", page, Question.class, null);
+		page.setUrl("question_toLT.action");
+		ActionContext.getContext().getValueStack().push(page);
 		return "lt";
 	}
 	public String detail(){

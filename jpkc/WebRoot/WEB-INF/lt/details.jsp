@@ -17,22 +17,26 @@
 		</div>
 		评论列表
 		<c:if test="${replyList.size()>0}">
-		<c:forEach items="${replyList}" var="a">
-		
+		<c:forEach items="${replyList}" var="a" varStatus="number">
 		    <div>
-		 		${a.content }
+		 		${number.count}:${a.content }<a href="#" onclick="replyshow()" >回复</a>
+		 		<div id="reply" style="display: none;">
+		 			<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
+					<input hidden="hidden" name="qid" value="${qid }"/>
+					<input hidden="hidden" name="touser" value="${user.uid}"/>
+					<div>
+						<div>
+							<textarea cols="20" rows="1" name="content"></textarea>
+						</div>
+						<input type="submit"  name="submit" value="发表评论"/>
+					</div>
+					</form>
+		 		</div>
 		    </div>
-		
 		</c:forEach>
 		</c:if>
 		<c:if test="${replyList.size()<=0}">
-			
 		</c:if>
-		
-		
-		
-		
-		
 		<div>
 		<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
 		<input hidden="hidden" name="qid" value="${qid }"/>
@@ -43,5 +47,13 @@
 			<input class="details_buttom_submit" type="submit"  name="submit" value="发表评论"/>
 		</div>
 		</form>
+		<script type="text/javascript">
+			
+			function replyshow(){
+				var div  = document.getElementById("reply");
+				div.style.display="block";
+			}
+		
+		</script>
 	</body>
 </html>

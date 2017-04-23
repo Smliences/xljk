@@ -6,13 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>精品课程</title>
 </head>
+
 <body>
 欢迎       ${existUser.name}
-<form action="${pageContext.request.contextPath }/question_toLT.action"
-method = "post">
-<input type="submit" value="提交"/>
+
+<form action="${pageContext.request.contextPath }/question_toLT.action" method="post">
+<input type="submit" value="论坛"/>
 </form>
-	
-	
 </body>
 </html>
+

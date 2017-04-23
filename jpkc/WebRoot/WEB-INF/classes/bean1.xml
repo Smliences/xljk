@@ -51,13 +51,7 @@
 				<value>com/jpkc/ssh/entity/User.hbm.xml</value>
 			</list>
 		</property> 
-	<!-- 	  <property name="packagesToScan">  
-            <list>  
-                <value>cn.itcast.*</value>  
-            </list>  
-        </property>
-	
-	 -->
+
 		
 	</bean>
 	
