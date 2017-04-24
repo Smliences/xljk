@@ -32,4 +32,6 @@ public interface BaseDao {
 	public User findByNum(String num);
 	public User findByUser(User user);
 
+	public User findById(Integer id);
+
 }

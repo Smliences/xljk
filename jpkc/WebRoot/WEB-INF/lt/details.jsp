@@ -15,42 +15,58 @@
 			<div class="details_hr"></div>
 			<div class="details_content">${content }<p class="details_content_p"></p></div>
 		</div>
-		评论列表
-		<c:if test="${replyList.size()>0}">
-		<c:forEach items="${replyList}" var="a" varStatus="number">
-		    <div>
-		 		${number.count}:${a.content }<a href="#" onclick="replyshow()" >回复</a>
-		 		<div id="reply" style="display: none;">
-		 			<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
-					<input hidden="hidden" name="qid" value="${qid }"/>
-					<input hidden="hidden" name="touser" value="${user.uid}"/>
-					<div>
+		评论列表<br>
+		<c:if test="${replyList!=null}">
+			<c:forEach items="${replyList}" var="a" varStatus="number">
+				${number.count}L.&nbsp;${a.user.name}&nbsp;
+			    <!-- 判断是否是二级评论 -->
+			    <c:if test="${a.touser!=null}">
+			    <!-- 用户1 回复 用户2 ：内容  -->
+			    	<c:forEach items="${touserList}" var="b">
+			    		<c:if test="${b.uid==a.touser}">@${b.name}</c:if>
+			    	</c:forEach>
+			    </c:if>
+			    :&nbsp;${a.content }
+			    &nbsp;&nbsp;<a href="#" onclick="replyshow('${number.count}')" >回复</a>
+			    <!-- 发表评论的隐藏的输入框 -->
+			    <div>
+			 		<div id="reply${number.count}" class="reply" style="display: none;">
+			 			<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
+						<input hidden="hidden" name="qid" value="${qid }"/>
+						<input hidden="hidden" name="touser" value="${a.user.uid}"/>
 						<div>
-							<textarea cols="20" rows="1" name="content"></textarea>
+							<div>
+								<textarea cols="20" rows="1" name="content"></textarea>
+							</div>
+							<input type="submit"  name="submit" value="发表评论"/>
 						</div>
-						<input type="submit"  name="submit" value="发表评论"/>
-					</div>
-					</form>
-		 		</div>
-		    </div>
-		</c:forEach>
+						</form>
+			 		</div>
+			    </div>
+			</c:forEach>
 		</c:if>
-		<c:if test="${replyList.size()<=0}">
+		<c:if test="${replyList==null}">
+			暂无用户评论
 		</c:if>
 		<div>
-		<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
-		<input hidden="hidden" name="qid" value="${qid }"/>
-		<div class="details_buttom">
-			<div class="details_buttom_content">
-				<textarea cols="100" rows="8" name="content"></textarea>
+			<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
+			<input hidden="hidden" name="qid" value="${qid }"/>
+			<div class="details_buttom">
+				<div class="details_buttom_content">
+					<textarea cols="100" rows="8" name="content"></textarea>
+				</div>
+				<input class="details_buttom_submit" type="submit"  name="submit" value="发表评论"/>
 			</div>
-			<input class="details_buttom_submit" type="submit"  name="submit" value="发表评论"/>
+			</form>
 		</div>
-		</form>
 		<script type="text/javascript">
 			
-			function replyshow(){
-				var div  = document.getElementById("reply");
+			function replyshow(id){
+				var alldiv = document.getElementsByClassName('reply');
+				for(var i=0;i<alldiv.length;i++){
+					alldiv[i].style.display="none";
+				}
+				var div  = document.getElementById("reply"+id);
 				div.style.display="block";
 			}
 		

@@ -9,15 +9,16 @@
 
 <body>
 欢迎       ${existUser.name}
-<<<<<<< HEAD
-<form action="${pageContext.request.contextPath }/question_toLT.action">
-<input type="submit" value="提交"/>
-=======
 
 <form action="${pageContext.request.contextPath }/question_toLT.action" method="post">
 <input type="submit" value="论坛"/>
->>>>>>> e41b8a01a2b99c93727230024a9584f1c95c83b7
 </form>
+
+<a href="${pageContext.request.contextPath }/file_toUpload.action">提交作业</a>
+
+
+<a href="${pageContext.request.contextPath }/file_getAllFileMessage.action">查看作业</a>
+
 </body>
 </html>
 
