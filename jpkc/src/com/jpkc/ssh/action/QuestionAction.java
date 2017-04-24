@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -77,16 +78,20 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		ServletActionContext.getContext().put("replyList", replyList);
 		List<User> touserList =new ArrayList<User>();
 		if(replyList!=null){
+			//使用hashset去除重复数据,避免从数据库重复取出同一个用户的信息
+			HashSet<Integer> hashSet = new HashSet<Integer>();
 			for(int j=0;j<replyList.size();j++){
 				Reply l = replyList.get(j);
 				if(l.getTouser()!=null){
-					touserList.add(userService.findById(l.getTouser()));
+					hashSet.add(l.getTouser());
 				}
 			}
+			Iterator<Integer> it = hashSet.iterator();
+			while (it.hasNext()) {
+				touserList.add(userService.findById(it.next()));
+			}
 		}
-		//使用hashset去除重复数据
-		HashSet<User> tousers = new HashSet<User>(touserList);
-		ServletActionContext.getContext().put("touserList", tousers);
+		ServletActionContext.getContext().put("touserList", touserList);
 		return "detail";
 	}
 }

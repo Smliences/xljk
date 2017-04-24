@@ -27,7 +27,7 @@
 			    	</c:forEach>
 			    </c:if>
 			    :&nbsp;${a.content }
-			    &nbsp;&nbsp;<a href="#" onclick="replyshow('${number.count}')" >回复</a>
+			    &nbsp;&nbsp;<a href="javascript:void(0)" onclick="replyshow('${number.count}')" >回复</a>
 			    <!-- 发表评论的隐藏的输入框 -->
 			    <div>
 			 		<div id="reply${number.count}" class="reply" style="display: none;">
