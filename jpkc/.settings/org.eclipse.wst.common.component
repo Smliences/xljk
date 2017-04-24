@@ -3,12 +3,7 @@
     <wb-module deploy-name="jpkc">
         <wb-resource deploy-path="/" source-path="/WebRoot"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-<<<<<<< HEAD
-        <property name="java-output-path" value="/jpkc/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="/jpkc"/>
-=======
         <property name="context-root" value="/jpkc"/>
         <property name="java-output-path" value="/jpkc/WebRoot/WEB-INF/classes"/>
->>>>>>> cad0af94d185ca3fac77a9af7a13818643a75f1b
     </wb-module>
 </project-modules>

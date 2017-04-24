@@ -14,6 +14,7 @@ import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.service.QuestionService;
 import com.jpkc.ssh.service.ReplyService;
+import com.jpkc.ssh.utils.Page;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -29,6 +30,18 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		// TODO Auto-generated method stub
 		return question;
 	}
+	private Page page = new Page();
+	public void setPage(Page page) {
+		this.page = page;
+	}
+
+	public Page getPage() {
+		return page;
+	}
+
+	public String toPublishPage(){
+		return "toPublishPage";
+	}
 	
 	public String publish(){
 		
@@ -41,11 +54,13 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		questionService.save(question);
 		List<Question> questionList = questionService.findAll();
 		ActionContext.getContext().put("questionList",questionList );
-		return "qlist";
+		return "lt";
 	}
 	public String toLT(){
 		
-		
+		page = questionService.findPage("from Question", page, Question.class, null);
+		page.setUrl("question_toLT.action");
+		ActionContext.getContext().getValueStack().push(page);
 		return "lt";
 	}
 	public String detail(){
@@ -55,10 +70,16 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		ActionContext.getContext().getValueStack().push(question);
 		List<Reply> replyList =  replyService.findByQid(i);
 		ServletActionContext.getContext().put("replyList", replyList);
+		
+		
 		return "detail";
 		
 		
 	}
+		
+		
+		
+		
 	
 	
 	

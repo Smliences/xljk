@@ -5,7 +5,7 @@ import java.util.List;
 import com.jpkc.ssh.dao.BaseDao;
 import com.jpkc.ssh.dao.QuestionDao;
 import com.jpkc.ssh.entity.Question;
-import com.jpkc.ssh.entity.User;
+import com.jpkc.ssh.utils.Page;
 
 public interface QuestionService {
 
@@ -16,6 +16,8 @@ public interface QuestionService {
 	Question findById(Integer qid);
 
 	
+    
+	public  Page findPage(String hql, Page page, Class entityClass, Object[] params);
 
 	
 	
