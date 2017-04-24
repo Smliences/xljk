@@ -27,17 +27,20 @@
 		</action>
 		
 		<action name="question_*" class="com.jpkc.ssh.action.QuestionAction" method="{1}">
+
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="qlist">/questionlist.jsp</result>
+
 			<result name="input">/error.jsp</result>
-			<result name="lt">/publish.jsp</result>
-			<result name="detail">/details.jsp</result>
+			<result name="lt">/WEB-INF/lt/questionlist.jsp</result>
+			<result name="toPublishPage">/WEB-INF/lt/publish.jsp</result>
+			<result name="detail">/WEB-INF/lt/details.jsp</result>
 		</action>
 		<action name="reply_*" class="com.jpkc.ssh.action.ReplyAction" method="{1}">
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="reply">/details.jsp</result>
+			<result name="reply">/WEB-INF/lt/psuccess.jsp</result>
+
 		</action>
 	<!-- 	<action name="test" class="testAction">
 			<result name="index">/index.jsp</result>

@@ -14,10 +14,7 @@ import com.jpkc.ssh.entity.Reply;
 import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.service.QuestionService;
 import com.jpkc.ssh.service.ReplyService;
-<<<<<<< HEAD
-=======
 import com.jpkc.ssh.utils.Page;
->>>>>>> e41b8a01a2b99c93727230024a9584f1c95c83b7
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -57,9 +54,6 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		questionService.save(question);
 		List<Question> questionList = questionService.findAll();
 		ActionContext.getContext().put("questionList",questionList );
-<<<<<<< HEAD
-		return "qlist";
-=======
 		return "lt";
 	}
 	public String toLT(){
@@ -81,24 +75,11 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		return "detail";
 		
 		
->>>>>>> e41b8a01a2b99c93727230024a9584f1c95c83b7
 	}
-	public String toLT(){
 		
 		
-		return "lt";
-	}
-	public String detail(){
-		String qid = ServletActionContext.getRequest().getParameter("qid");
-		Integer i = Integer.valueOf(qid);
-		Question question = questionService.findById(i);
-		ActionContext.getContext().getValueStack().push(question);
-		List<Reply> replyList =  replyService.findByQid(i);
-		ServletActionContext.getContext().put("replyList", replyList);
-		return "detail";
 		
 		
-	}
 	
 	
 	

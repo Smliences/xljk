@@ -47,8 +47,6 @@ public class QuestionDaoImpl implements QuestionDao{
 		}
 		return null;
 	}
-<<<<<<< HEAD
-=======
 
 	public <T> Page<T> findPage(String hql, Page<T> page, Class<T> entityClass, Object[] params){
 		
@@ -70,7 +68,6 @@ public class QuestionDaoImpl implements QuestionDao{
 		
 		return page;
 	}
->>>>>>> e41b8a01a2b99c93727230024a9584f1c95c83b7
 	
 	
 	
