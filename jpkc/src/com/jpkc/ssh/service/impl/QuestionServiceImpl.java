@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jpkc.ssh.dao.QuestionDao;
 import com.jpkc.ssh.entity.Question;
 import com.jpkc.ssh.service.QuestionService;
+import com.jpkc.ssh.utils.Page;
 
 @Service("questionService")
 @Transactional
@@ -33,6 +34,13 @@ public class QuestionServiceImpl implements QuestionService{
 		return question;
 		
 	}
+<<<<<<< HEAD
+=======
+	public Page findPage(String hql, Page page, Class entityClass, Object[] params) {
+		// TODO Auto-generated method stub
+		return questionDao.findPage(hql, page, entityClass, params);
+	}
+>>>>>>> e41b8a01a2b99c93727230024a9584f1c95c83b7
 	
 	
 
