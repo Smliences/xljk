@@ -13,12 +13,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- * éªè¯ç Actionç±»
- * 
- * @author ä¼ æº.é­å
- * 
- */
+
 public class CheckImgAction extends ActionSupport {
 
 	@Override

@@ -1,0 +1,46 @@
+*{
+	padding:0px;
+	margin: 0px;
+}
+.details_box{
+	width: 70%;
+	margin: auto;
+	height: 550px;
+	background: #EDF7FD;
+}
+#title{
+	float: left;
+	margin-left: 8%;
+	height: 50px;
+	line-height: 50px;
+}
+.details_hr{
+	float: left;
+	margin: 20px 0px;
+	width: 100%;
+	height: 2px;
+	background: #CCCCCC;
+}
+.details_content{
+	float: left;
+	margin-left: 5%;
+}
+.details_content_p{
+	text-indent: 2em;
+}
+.details_buttom{
+	width: 70%;
+	margin:20px  auto;
+	height: 150px;
+	background: #EDF7FD;
+}
+.details_buttom_content{
+	width: 80%;
+	height: 120px;
+	margin: auto;
+}
+.details_buttom_submit{
+	height:30px;
+	float: right;
+	margin-right: 10%;
+}

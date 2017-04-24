@@ -2,8 +2,10 @@ package com.jpkc.ssh.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -29,9 +31,7 @@ public class FileUtil {
 				}
 			}
 		}
-		else {
-			throw new RuntimeException(path + " is not a directory");
-		}
+
 		return list;
 	}
 
@@ -43,11 +43,12 @@ public class FileUtil {
 		Collection<File> filelist = getFileFromDirectory(path);
 		Collection<Map<String, String>> fileMessages = new ArrayList<Map<String, String>>();
 		for (File file : filelist) {
-			String[] messages = file.getName().split("---");
+			String[] messages = file.getName().split("#");
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("username", messages[0]);
 			map.put("fileflag", messages[1]);
-			map.put("filename", messages[2]);
+			map.put("submitTime", messages[2].replace("--", ":"));
+			map.put("filename", messages[3]);
 			fileMessages.add(map);
 		}
 		return fileMessages;
@@ -91,8 +92,10 @@ public class FileUtil {
 	 */
 	public static void saveFile(String path, File inputFile,String filename, String username) throws IOException {
 		UUID uuid = UUID.randomUUID();
-		String flagString = uuid.toString().replace("-", "").toUpperCase();
-		String name = username + "---" + flagString + "---" + filename;
+		String flag = uuid.toString().replace("-", "").toUpperCase();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH--mm--ss");
+		String date = simpleDateFormat.format(new Date());
+		String name = username + "#" + flag + "#"+ date + "#" + filename;
 		File outputFile = new File(path+File.separator+name);
 		FileUtils.copyFile(inputFile, outputFile);
 	}
