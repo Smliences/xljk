@@ -41,7 +41,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 			userService.save(user);
 		}
 		HttpServletRequest request = ServletActionContext.getRequest();
-		request.setAttribute("registsuccess", "ע��ɹ�");
+		request.setAttribute("registsuccess", "注册成功");
 		return "login";
 	}
 	

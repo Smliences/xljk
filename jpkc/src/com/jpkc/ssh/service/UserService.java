@@ -11,4 +11,5 @@ public interface UserService extends BaseDao{
 
 	User findByUser(User user);
 	
+	User findById(Integer id) ;
 }

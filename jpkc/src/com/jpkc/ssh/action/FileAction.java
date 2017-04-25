@@ -14,6 +14,7 @@ import org.apache.struts2.util.ServletContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.utils.FileUtil;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -36,8 +37,8 @@ public class FileAction extends ActionSupport implements ServletContextAware{
 	 */
 	public String toUpload(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
-		String username = (String) session.getAttribute("existUser");
-		ActionContext.getContext().put("username", username);
+		User user = (User) session.getAttribute("existUser");
+		ActionContext.getContext().put("username", user.getName());
 		return "upload";
 	}
 	

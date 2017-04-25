@@ -39,18 +39,10 @@ public class ReplyAction extends ActionSupport implements ModelDriven<Reply> {
 		long date = new Date().getTime();
 		SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		String str = s.format(date);
-		System.out.println(reply.getTouser());
 		reply.setTouser(reply.getTouser());
 		reply.setRtime(str);
 		reply.setQuestion(question);
 		replyService.save(reply);
-		
 		return "reply";
-		
 	}
-	
-	
-	
-	
-
 }
