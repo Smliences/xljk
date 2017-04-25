@@ -18,9 +18,6 @@
 		</action>
 		
 		<action name="checkImg" class="com.jpkc.ssh.action.CheckImgAction">
-				<interceptor-ref name="interceptor">
-					<param name="excludeMethods">execute</param>
-				</interceptor-ref>
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 		
