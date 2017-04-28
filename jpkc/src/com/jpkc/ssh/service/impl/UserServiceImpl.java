@@ -71,5 +71,10 @@ public class UserServiceImpl implements UserService{
 		return dao.findByUser(user);
 		
 	}
+	public User findById(Integer id) {
+		return dao.findById(id);
+		
+	}
+	 
 
 }

@@ -104,5 +104,11 @@ public class BaseDaoImpl implements BaseDao{
 	}
 
 
+	public User findById(Integer id) {
+		User user =  hibernateTemplate.get(User.class, id);
+		return user;
+	}
+
+
 }
 

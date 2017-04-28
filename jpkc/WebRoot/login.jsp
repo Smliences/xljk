@@ -23,8 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	<font color="green" font-size:"25px" text-align:center>${registsuccess}</font><br/>
                     <div class="username">用户名<input name="num" type="number" autofocus required placeholder="学号/工号"/></div>
                     <div class="password">密码<input name="pwd" type="password" required/></div>
-                    <div class="code">验证码<input name="checkcode" type="text" required /><img id="checkImg" class="captchaImage" src="${pageContext.request.contextPath}/checkImg.action"  onclick="change()"  title="点击更换验证码" />
-</div>
+                    <div class="code">验证码<input name="checkcode" type="text" required /><img id="checkImg" class="captchaImage" src="${pageContext.request.contextPath}/checkImg.action"  onclick="change()"  title="点击更换验证码" /></div>
                 </div>
                 <div class="actions">
                     <input type="submit" class="submit" value="登 录">
