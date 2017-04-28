@@ -1,0 +1,24 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+ul li{
+	list-style: none;
+}
+body{
+	width: 1280px;
+	margin: auto !important;
+	color: #000000 !important;
+	background: #d9edf4 !important;
+}
+a{
+	text-decoration: none !important;
+	color: #fff !important;
+}
+a:link{
+	text-decoration: none !important;
+	color: #fff !important;
+}
+p{
+	font-size: 16px;
+}

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="GBK">
+		<title></title>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+			}
+			ul li {
+				list-style: none;
+			}
+			.pinglun{
+				width: 500px;
+				height: auto;
+				margin: auto;
+				border: 1px solid #000;
+				padding: 15px;
+				line-height: 25px;
+			}
+			a{
+				margin-left: 15px;
+			}
+		</style> 
+		<script>
+			window.onload = function(){
+				var a = document.getElementsByTagName("a");
+				
+				var flag = 	1;
+				for(var i = 0;i < a.length; i++){
+					a[i].onclick = function(){
+						if(flag == 1){
+							var newli = document.createElement("li");
+							var input = document.createElement("input");
+							var btn = document.createElement("button");
+							input.setAttribute("type","text"); 
+							btn.innerHTML = "发表评论";
+							newli.appendChild(input);
+							newli.appendChild(btn);
+							this.parentNode.appendChild(newli);
+							flag = 0;
+						}
+						var btn = document.getElementsByTagName("button")[0];
+						btn.onclick = function(){
+							flag = 1;
+							newli.innerHTML = input.value;
+							this.parentNode.appendChild(newli);
+						}
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="pinglun">
+			<p>评论列表</p>
+			<ul>
+				<li>1L.123<a href="#">回复</a></li>
+				<li>2L.456<a href="#">回复</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -9,11 +9,11 @@
 	</interceptors>
 		
 		<global-results>
-			<result name="input">/error.jsp</result>
+			<result name="input">/login.jsp</result>
 		</global-results>
 		<action name="user_*" class="com.jpkc.ssh.action.UserAction" method="{1}">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="msg">/index.jsp</result>
+			<result name="msg" type="redirectAction">question_toLT.action</result>
 			<result name="login">/login.jsp</result>
 		</action>
 		
@@ -26,7 +26,6 @@
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 
-			<result name="input">/error.jsp</result>
 			<result name="lt">/WEB-INF/lt/questionlist.jsp</result>
 			<result name="tolt" type="redirectAction">question_toLT.action</result>
 			<result name="toPublishPage">/WEB-INF/lt/publish.jsp</result>

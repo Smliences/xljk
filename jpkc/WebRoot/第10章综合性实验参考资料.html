@@ -1,0 +1,230 @@
+<!DOCTYPE html><!--[if IE]>  <html class="ie"> <![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="第10章综合性实验参考资料_files/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/auto-frame.css"/>
+	</head>
+	<body>
+		<div class="stl_02">
+			<div class="stl_03">
+				<object data="第10章综合性实验参考资料_files/img_01.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="第10章综合性实验参考资料_files/img_01.svg" type="image/svg+xml" class="stl_04" />
+				</object>
+			</div>
+			<div class="view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="top:2.5702em; left:30.6769em;"><span class="stl_07 stl_08 stl_09">第</span><span class="stl_10 stl_11 stl_09">10</span><span class="stl_07 stl_08 stl_09">章</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">&nbsp;</span><span class="stl_12 stl_08 stl_09">综</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">合性、</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">设计</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">性</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">实验</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">参考</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">资</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">料</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0.834em;">&nbsp;</span><span class="stl_10 stl_11 stl_09" style="word-spacing:0.834em;">·1· &nbsp;</span></div>
+					<div class="stl_01" style="top:7.1565em; left:8.5729em;"><span class="stl_13 stl_14 stl_09" style="font-weight:bold; word-spacing:0.0478em;">第</span><span class="stl_15 stl_14 stl_09" style="font-weight:bold; word-spacing:0.0478em;">10</span><span class="stl_13 stl_14 stl_09" style="font-weight:bold; word-spacing:0.0478em;">章 综合性、设计性实验参考资料 &nbsp;</span></div>
+					<div class="stl_01" style="top:12.3889em; left:5.9083em;"><span class="stl_16 stl_14 stl_17" style="font-weight:bold; word-spacing:0.3002em;">10.1 VLAN</span><span class="stl_18 stl_14 stl_17" style="font-weight:bold; word-spacing:0.3002em;">之间的通信实现 &nbsp;</span></div>
+					<div class="stl_01" style="top:16.3969em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">一、网络设计 &nbsp;</span></div>
+					<div class="stl_01" style="top:19.9969em; left:5.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0006em;">1. </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0006em;">技术方案： &nbsp;</span></div>
+					<div class="stl_01" style="top:22.5969em; left:7.9283em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:25.1969em; left:7.9283em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:22.5969em; left:8.9283em;"><span class="stl_20 stl_14 stl_09">1</span><span class="stl_19 stl_14 stl_09">）根据需求，选取</span><span class="stl_20 stl_14 stl_09">S2126G</span><span class="stl_19 stl_14 stl_09">、</span><span class="stl_20 stl_14 stl_09">S3550</span><span class="stl_19 stl_14 stl_09">各</span><span class="stl_20 stl_14 stl_09">1</span><span class="stl_19 stl_14 stl_09">台； &nbsp;</span></div>
+					<div class="stl_01" style="top:25.1969em; left:8.9283em;"><span class="stl_20 stl_14 stl_21">2</span><span class="stl_19 stl_14 stl_21">）关键技术： &nbsp;</span></div>
+					<div class="stl_01" style="top:27.7969em; left:7.9283em;"><span class="stl_20 stl_14 stl_09">1</span><span class="stl_19 stl_14 stl_09">）开启三层交换机物理接口的路由功能： &nbsp;</span></div>
+					<div class="stl_01" style="top:30.4986em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.01em;">Switch(config)#interface fastethernet 0/5 &nbsp;</span></div>
+					<div class="stl_01" style="top:32.9969em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0102em;">Switch(config-if)#no switchport &nbsp;</span></div>
+					<div class="stl_01" style="top:32.9969em; left:27.6063em;"><span class="stl_19 stl_14 stl_09">将物理接口设为路由接口 &nbsp;</span></div>
+					<div class="stl_01" style="top:35.6986em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0072em;">Switch(config-if)#ip address 192.168.1.1 255.255.255.0 &nbsp;</span></div>
+					<div class="stl_01" style="top:38.2986em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0102em;">Switch(config-if)#no shutdown &nbsp;</span></div>
+					<div class="stl_01" style="top:40.7969em; left:7.9283em;"><span class="stl_20 stl_14 stl_17" style="word-spacing:0.0034em;">2</span><span class="stl_19 stl_14 stl_17" style="word-spacing:0.0034em;">）采用</span><span class="stl_20 stl_14 stl_17" style="word-spacing:0.0034em;">SVI</span><span class="stl_19 stl_14 stl_17" style="word-spacing:0.0034em;">（</span><span class="stl_20 stl_14 stl_17" style="word-spacing:0.0034em;">switch virtual interface</span><span class="stl_19 stl_14 stl_17" style="word-spacing:0.0034em;">）方式： &nbsp;</span></div>
+					<div class="stl_01" style="top:43.3969em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0077em;">Switch(config)#interface vlan 10 &nbsp;</span></div>
+					<div class="stl_01" style="top:43.3969em; left:27.5771em;"><span class="stl_19 stl_14 stl_17" style="word-spacing:0.0022em;">创建虚拟接口</span><span class="stl_20 stl_14 stl_17" style="word-spacing:0.0022em;">vlan 10 &nbsp;</span></div>
+					<div class="stl_01" style="top:46.0986em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0058em;">Switch(config-if)#ip address 192.168.0.1 255 255.255.0 &nbsp;</span></div>
+					<div class="stl_01" style="top:48.6986em; left:9.8783em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0102em;">Switch(config-if)#no shutdown &nbsp;</span></div>
+					<div class="stl_01" style="top:51.1969em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:51.1969em; left:6.9083em;"><span class="stl_20 stl_14 stl_21">3</span><span class="stl_19 stl_14 stl_21">）网络地址规划： &nbsp;</span></div>
+					<div class="stl_01" style="top:53.3629em; left:10.9728em;"><span class="stl_23 stl_14 stl_24">VLAN</span><span class="stl_25 stl_14 stl_24">编号 &nbsp;</span></div>
+					<div class="stl_01" style="top:54.7672em; left:11.2829em;"><span class="stl_23 stl_14 stl_22">VLAN10 &nbsp;</span></div>
+					<div class="stl_01" style="top:56.0953em; left:11.2829em;"><span class="stl_23 stl_14 stl_22">VLAN20 &nbsp;</span></div>
+					<div class="stl_01" style="top:57.4235em; left:11.2829em;"><span class="stl_23 stl_14 stl_22">VLAN30 &nbsp;</span></div>
+					<div class="stl_01" style="top:58.7517em; left:11.2829em;"><span class="stl_23 stl_14 stl_22">VLAN30 &nbsp;</span></div>
+					<div class="stl_01" style="top:60.0798em; left:11.2829em;"><span class="stl_23 stl_14 stl_22">VLAN30 &nbsp;</span></div>
+					<div class="stl_01" style="top:53.3629em; left:19.8542em;"><span class="stl_25 stl_14 stl_09">名称 &nbsp;</span></div>
+					<div class="stl_01" style="top:54.7672em; left:19.9039em;"><span class="stl_23 stl_14 stl_26">PC1 &nbsp;</span></div>
+					<div class="stl_01" style="top:56.0953em; left:19.9039em;"><span class="stl_23 stl_14 stl_26">PC2 &nbsp;</span></div>
+					<div class="stl_01" style="top:57.4235em; left:19.9039em;"><span class="stl_23 stl_14 stl_26">PC3 &nbsp;</span></div>
+					<div class="stl_01" style="top:58.7517em; left:19.9039em;"><span class="stl_23 stl_14 stl_26">PC4 &nbsp;</span></div>
+					<div class="stl_01" style="top:60.0798em; left:19.9039em;"><span class="stl_23 stl_14 stl_26">PC5 &nbsp;</span></div>
+					<div class="stl_01" style="top:53.3629em; left:28.4812em;"><span class="stl_23 stl_14 stl_27">IP</span><span class="stl_25 stl_14 stl_27">地址 &nbsp;</span></div>
+					<div class="stl_01" style="top:53.3629em; left:36.7042em;"><span class="stl_25 stl_14 stl_09">网关 &nbsp;</span></div>
+					<div class="stl_01" style="top:54.7672em; left:26.9407em;"><span class="stl_23 stl_14 stl_22">192.168.0.1/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:56.0953em; left:26.9407em;"><span class="stl_23 stl_14 stl_22">192.168.1.1/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:57.4235em; left:26.9407em;"><span class="stl_23 stl_14 stl_22">192.168.2.1/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:58.7517em; left:26.9407em;"><span class="stl_23 stl_14 stl_22">192.168.2.2/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:60.0798em; left:26.9407em;"><span class="stl_23 stl_14 stl_22">192.168.2.3/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:54.7672em; left:34.9843em;"><span class="stl_23 stl_14 stl_22">192.168.0.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:56.0953em; left:34.9843em;"><span class="stl_23 stl_14 stl_22">192.168.1.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:57.4235em; left:34.9843em;"><span class="stl_23 stl_14 stl_22">192.168.2.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:58.7517em; left:34.9843em;"><span class="stl_23 stl_14 stl_22">192.168.2.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:60.0798em; left:34.9843em;"><span class="stl_23 stl_14 stl_22">192.168.2.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:61.8076em; left:5.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0006em;">2. </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0006em;">设计网络拓朴： &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_02">
+			<div class="stl_03">
+				<object data="第10章综合性实验参考资料_files/img_03.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="第10章综合性实验参考资料_files/img_03.svg" type="image/svg+xml" class="stl_04" />
+				</object>
+			</div>
+			<div class="view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="top:2.6944em; left:5.9083em;"><span class="stl_10 stl_11 stl_09">·2· &nbsp;</span></div>
+					<div class="stl_01" style="top:2.5702em; left:30.6769em;"><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">第</span><span class="stl_10 stl_11 stl_09" style="word-spacing:0em;">10</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">章 </span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">综</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">合性、</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">设计</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">性</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">实验</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">参考</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">资</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">料 &nbsp;</span></div>
+					<div class="stl_01" style="top:14.6947em; left:18.5455em;"><span class="stl_25 stl_14 stl_28" style="word-spacing:0.2934em;">图</span><span class="stl_23 stl_14 stl_28" style="word-spacing:0.2934em;">10-1 VLAN</span><span class="stl_25 stl_14 stl_28" style="word-spacing:0.2934em;">之间的通信实现网络拓扑 &nbsp;</span></div>
+					<div class="stl_01" style="top:16.9636em; left:5.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0006em;">3. </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0006em;">设备配置： &nbsp;</span></div>
+					<div class="stl_01" style="top:19.5636em; left:7.9283em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:22.1636em; left:7.9283em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:19.5636em; left:8.9283em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">1</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">）二层交换机</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">S2126</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">：创建</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">3</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">个</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">VLAN </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">和</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">1</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">个</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0018em;">Trunk</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0018em;">口； &nbsp;</span></div>
+					<div class="stl_01" style="top:22.1636em; left:8.9283em;"><span class="stl_20 stl_14 stl_21">2</span><span class="stl_19 stl_14 stl_21">）三层交换机</span><span class="stl_20 stl_14 stl_21">S3550</span><span class="stl_19 stl_14 stl_21">：创建</span><span class="stl_20 stl_14 stl_21">3</span><span class="stl_19 stl_14 stl_21">个</span><span class="stl_20 stl_14 stl_21">VLAN &nbsp;</span></div>
+					<div class="stl_01" style="top:24.7636em; left:5.9083em;"><span class="stl_19 stl_14 stl_21">和</span><span class="stl_20 stl_14 stl_21">1</span><span class="stl_19 stl_14 stl_21">个</span><span class="stl_20 stl_14 stl_21">Trunk</span><span class="stl_19 stl_14 stl_21">口，对各</span><span class="stl_20 stl_14 stl_21">SVI</span><span class="stl_19 stl_14 stl_21">端口分配</span><span class="stl_20 stl_14 stl_21">IP</span><span class="stl_19 stl_14 stl_21">地址。 &nbsp;</span></div>
+					<div class="stl_01" style="top:27.3636em; left:8.9283em;"><span class="stl_20 stl_14 stl_09">3</span><span class="stl_19 stl_14 stl_09">）三层交换机开启路由功能（默认情况已开启）： &nbsp;</span></div>
+					<div class="stl_01" style="top:29.9636em; left:10.3783em;"><span class="stl_20 stl_14 stl_29" style="word-spacing:0.0083em;">Switch(config)#ip routing</span><span class="stl_20 stl_14 stl_29" style="word-spacing:3.5391em;">&nbsp;</span><span class="stl_19 stl_14 stl_29" style="word-spacing:3.5391em;">开启三层交换机路由功能 &nbsp;</span></div>
+					<div class="stl_01" style="top:32.5636em; left:6.4943em;"><span class="stl_20 stl_14 stl_09" style="word-spacing:0.0005em;">. </span><span class="stl_19 stl_14 stl_09" style="word-spacing:0.0005em;">实验测试： &nbsp;</span></div>
+					<div class="stl_01" style="top:27.3636em; left:7.9283em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:32.5636em; left:5.9083em;"><span class="stl_20 stl_14 stl_09">4</span></div>
+					<div class="stl_01" style="top:35.1636em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:37.7636em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:40.3636em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:35.1636em; left:6.9083em;"><span class="stl_20 stl_14 stl_17">1</span><span class="stl_19 stl_14 stl_17">）按规划的网络地址配置好各</span><span class="stl_20 stl_14 stl_17">PC</span><span class="stl_19 stl_14 stl_17">机（网关均为所在</span><span class="stl_20 stl_14 stl_17">VLAN</span><span class="stl_19 stl_14 stl_17">的</span><span class="stl_20 stl_14 stl_17">SVI</span><span class="stl_19 stl_14 stl_17">地址）； &nbsp;</span></div>
+					<div class="stl_01" style="top:37.7636em; left:6.9083em;"><span class="stl_20 stl_14 stl_09">2</span><span class="stl_19 stl_14 stl_09">）按网络拓扑图要求连接好各设备； &nbsp;</span></div>
+					<div class="stl_01" style="top:40.3636em; left:6.9083em;"><span class="stl_20 stl_14 stl_17">3</span><span class="stl_19 stl_14 stl_17">）用</span><span class="stl_20 stl_14 stl_17">PING</span><span class="stl_19 stl_14 stl_17">命令测试网络连通性。 &nbsp;</span></div>
+					<div class="stl_01" style="top:42.9636em; left:5.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0007em;">5. </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0007em;">实验结果 &nbsp;</span></div>
+					<div class="stl_01" style="top:45.5636em; left:7.0883em;"><span class="stl_19 stl_14 stl_30">各</span><span class="stl_20 stl_14 stl_30">VLAN</span><span class="stl_19 stl_14 stl_30">中的主机均能相互</span><span class="stl_20 stl_14 stl_30">PING</span><span class="stl_19 stl_14 stl_30">通。 &nbsp;</span></div>
+					<div class="stl_01" style="top:49.1636em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">二、参考配置 &nbsp;</span></div>
+					<div class="stl_01" style="top:52.7636em; left:7.4083em;"><span class="stl_31 stl_14 stl_29" style="font-weight:bold;">1</span><span class="stl_32 stl_14 stl_29" style="font-weight:bold;">、配置二层</span><span class="stl_31 stl_14 stl_29" style="font-weight:bold;">SwitchA &nbsp;</span></div>
+					<div class="stl_01" style="top:55.4652em; left:9.9583em;"><span class="stl_20 stl_14 stl_24" style="word-spacing:0.0027em;">Switch &gt;enable &nbsp;</span></div>
+					<div class="stl_01" style="top:58.0652em; left:9.9583em;"><span class="stl_20 stl_14 stl_24" style="word-spacing:0.0075em;">Switch#configure terminal &nbsp;</span></div>
+					<div class="stl_01" style="top:60.6652em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0125em;">Switch(config)#hostname SwitchA &nbsp;</span></div>
+					<div class="stl_01" style="top:63.2652em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config)#vlan 10 &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_02">
+			<div class="stl_03">
+				<object data="第10章综合性实验参考资料_files/img_04.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="第10章综合性实验参考资料_files/img_04.svg" type="image/svg+xml" class="stl_04" />
+				</object>
+			</div>
+			<div class="view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="top:2.5702em; left:30.6769em;"><span class="stl_07 stl_08 stl_09">第</span><span class="stl_10 stl_11 stl_09">10</span><span class="stl_07 stl_08 stl_09">章</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">&nbsp;</span><span class="stl_12 stl_08 stl_09">综</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">合性、</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">设计</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">性</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">实验</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">参考</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">资</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">料</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0.834em;">&nbsp;</span><span class="stl_10 stl_11 stl_09" style="word-spacing:0.834em;">·3· &nbsp;</span></div>
+					<div class="stl_01" style="top:5.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0127em;">SwitchA(config-vlan)#name Students &nbsp;</span></div>
+					<div class="stl_01" style="top:8.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchA(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:11.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config)#vlan 20 &nbsp;</span></div>
+					<div class="stl_01" style="top:13.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0127em;">SwitchA(config-vlan)#name Teachers &nbsp;</span></div>
+					<div class="stl_01" style="top:16.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchA(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:18.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config)#vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:21.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0127em;">SwitchA(config-vlan)#name Technologys &nbsp;</span></div>
+					<div class="stl_01" style="top:24.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchA(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:26.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0103em;">SwitchA(config)#interface fastethernet 0/1 &nbsp;</span></div>
+					<div class="stl_01" style="top:29.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0067em;">SwitchA(config-if)#switch access vlan 10 &nbsp;</span></div>
+					<div class="stl_01" style="top:31.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config-if)#interface fastethernet 0/2 &nbsp;</span></div>
+					<div class="stl_01" style="top:34.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0067em;">SwitchA(config-if)#switch access vlan 20 &nbsp;</span></div>
+					<div class="stl_01" style="top:37.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config-if)#interface fastethernet 0/3 &nbsp;</span></div>
+					<div class="stl_01" style="top:39.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0067em;">SwitchA(config-if)#switch access vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:42.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.011em;">SwitchA(config-if)#interface fastethernet 0/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:44.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0093em;">SwitchA(config-if)#switchport mode trunk &nbsp;</span></div>
+					<div class="stl_01" style="top:47.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchA(config-if)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:50.0136em; left:7.4083em;"><span class="stl_31 stl_14 stl_29" style="font-weight:bold;">2</span><span class="stl_32 stl_14 stl_29" style="font-weight:bold;">、配置三层</span><span class="stl_31 stl_14 stl_29" style="font-weight:bold;">SwitchB &nbsp;</span></div>
+					<div class="stl_01" style="top:52.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_24">Switch&gt;enable &nbsp;</span></div>
+					<div class="stl_01" style="top:55.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_24" style="word-spacing:0.0075em;">Switch#configure terminal &nbsp;</span></div>
+					<div class="stl_01" style="top:57.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0125em;">Switch(config)#hostname SwitchB &nbsp;</span></div>
+					<div class="stl_01" style="top:60.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0108em;">SwitchB(config)#vlan 10 &nbsp;</span></div>
+					<div class="stl_01" style="top:63.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-vlan)#exit &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_02">
+			<div class="stl_03">
+				<object data="第10章综合性实验参考资料_files/img_05.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="第10章综合性实验参考资料_files/img_05.svg" type="image/svg+xml" class="stl_04" />
+				</object>
+			</div>
+			<div class="view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="top:2.6944em; left:5.9083em;"><span class="stl_10 stl_11 stl_09">·4· &nbsp;</span></div>
+					<div class="stl_01" style="top:2.5702em; left:30.6769em;"><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">第</span><span class="stl_10 stl_11 stl_09" style="word-spacing:0em;">10</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">章 </span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">综</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">合性、</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">设计</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">性</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">实验</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">参考</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">资</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">料 &nbsp;</span></div>
+					<div class="stl_01" style="top:5.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0108em;">SwitchB(config)#vlan 20 &nbsp;</span></div>
+					<div class="stl_01" style="top:8.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:11.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0108em;">SwitchB(config)#vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:13.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:16.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0125em;">SwitchB(config-vlan)#name Students &nbsp;</span></div>
+					<div class="stl_01" style="top:18.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:21.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0102em;">SwitchB(config)#interface fastethernet 0/1 &nbsp;</span></div>
+					<div class="stl_01" style="top:24.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0066em;">SwitchB(config-if)#switch access vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:26.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-vlan)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:29.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0102em;">SwitchB(config)#interface fastethernet 0/2 &nbsp;</span></div>
+					<div class="stl_01" style="top:31.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0066em;">SwitchB(config-if)#switch access vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:34.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0109em;">SwitchB(config-if)#interface fastethernet 0/24 &nbsp;</span></div>
+					<div class="stl_01" style="top:37.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0092em;">SwitchB(config-if)#switchport mode trunk &nbsp;</span></div>
+					<div class="stl_01" style="top:39.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchB(config-if)#exit &nbsp;</span></div>
+					<div class="stl_01" style="top:42.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0079em;">SwitchB(config)#interface vlan 10 &nbsp;</span></div>
+					<div class="stl_01" style="top:44.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0076em;">SwitchB(config-if)#ip address 192.168.0.254 255.255.255.0 &nbsp;</span></div>
+					<div class="stl_01" style="top:47.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0106em;">SwitchB(config-if)#no shutdown &nbsp;</span></div>
+					<div class="stl_01" style="top:50.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0086em;">SwitchB(config-if)#interface vlan 20 &nbsp;</span></div>
+					<div class="stl_01" style="top:52.7152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0076em;">SwitchB(config-if)#ip address 192.168.1.254 255.255.255.0 &nbsp;</span></div>
+					<div class="stl_01" style="top:55.3152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0106em;">SwitchB(config-if)#no shutdown &nbsp;</span></div>
+					<div class="stl_01" style="top:57.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0086em;">SwitchB(config-if)#interface vlan 30 &nbsp;</span></div>
+					<div class="stl_01" style="top:60.5152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0076em;">SwitchB(config-if)#ip address 192.168.2.254 255.255.255.0 &nbsp;</span></div>
+					<div class="stl_01" style="top:63.1152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22" style="word-spacing:0.0106em;">SwitchB(config-if)#no shutdown &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_02">
+			<div class="stl_03">
+				<object data="第10章综合性实验参考资料_files/img_07.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="第10章综合性实验参考资料_files/img_07.svg" type="image/svg+xml" class="stl_04" />
+				</object>
+			</div>
+			<div class="view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="top:2.5702em; left:30.6769em;"><span class="stl_07 stl_08 stl_09">第</span><span class="stl_10 stl_11 stl_09">10</span><span class="stl_07 stl_08 stl_09">章</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">&nbsp;</span><span class="stl_12 stl_08 stl_09">综</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">合性、</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">设计</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">性</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">实验</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">参考</span><span class="stl_12 stl_08 stl_09" style="word-spacing:0em;">资</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0em;">料</span><span class="stl_07 stl_08 stl_09" style="word-spacing:0.834em;">&nbsp;</span><span class="stl_10 stl_11 stl_09" style="word-spacing:0.834em;">·5· &nbsp;</span></div>
+					<div class="stl_01" style="top:5.9152em; left:9.9583em;"><span class="stl_20 stl_14 stl_22">SwitchA(config-if)#end &nbsp;</span></div>
+					<div class="stl_01" style="top:9.3389em; left:5.9083em;"><span class="stl_16 stl_14 stl_29" style="font-weight:bold; word-spacing:0.3005em;">10.2 </span><span class="stl_18 stl_14 stl_29" style="font-weight:bold; word-spacing:0.3005em;">局域网设计 &nbsp;</span></div>
+					<div class="stl_01" style="top:13.3469em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">一、网络设计 &nbsp;</span></div>
+					<div class="stl_01" style="top:16.9469em; left:5.9083em;"><span class="stl_31 stl_14 stl_21" style="font-weight:bold; word-spacing:0.0009em;">1. </span><span class="stl_32 stl_14 stl_21" style="font-weight:bold; word-spacing:0.0009em;">提出技术方案： &nbsp;</span></div>
+					<div class="stl_01" style="top:19.5469em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:19.5469em; left:6.9083em;"><span class="stl_20 stl_14 stl_21">1</span><span class="stl_19 stl_14 stl_21">）规划子网地址； &nbsp;</span></div>
+					<div class="stl_01" style="top:22.2129em; left:9.8686em;"><span class="stl_23 stl_14 stl_24">VLAN</span><span class="stl_25 stl_14 stl_24">编号 &nbsp;</span></div>
+					<div class="stl_01" style="top:23.6172em; left:10.1788em;"><span class="stl_23 stl_14 stl_22">VLAN10 &nbsp;</span></div>
+					<div class="stl_01" style="top:24.9453em; left:10.1788em;"><span class="stl_23 stl_14 stl_22">VLAN20 &nbsp;</span></div>
+					<div class="stl_01" style="top:22.2129em; left:19.1645em;"><span class="stl_25 stl_14 stl_24">子网</span><span class="stl_23 stl_14 stl_24">IP</span><span class="stl_25 stl_14 stl_24">范围 &nbsp;</span></div>
+					<div class="stl_01" style="top:22.2129em; left:29.575em;"><span class="stl_25 stl_14 stl_09">子网掩码 &nbsp;</span></div>
+					<div class="stl_01" style="top:22.2129em; left:37.8083em;"><span class="stl_25 stl_14 stl_09">网关 &nbsp;</span></div>
+					<div class="stl_01" style="top:23.6172em; left:16.122em;"><span class="stl_23 stl_14 stl_22">192.168.10.1-192.168.10.62 &nbsp;</span></div>
+					<div class="stl_01" style="top:24.9453em; left:15.6822em;"><span class="stl_23 stl_14 stl_22">192.168.10.65-192.168.10.126 &nbsp;</span></div>
+					<div class="stl_01" style="top:23.6172em; left:28.1653em;"><span class="stl_23 stl_14 stl_22">255.255.255.192 &nbsp;</span></div>
+					<div class="stl_01" style="top:24.9453em; left:28.1653em;"><span class="stl_23 stl_14 stl_22">255.255.255.192 &nbsp;</span></div>
+					<div class="stl_01" style="top:23.6172em; left:36.0884em;"><span class="stl_23 stl_14 stl_22">192.168.10.62 &nbsp;</span></div>
+					<div class="stl_01" style="top:24.9453em; left:35.8685em;"><span class="stl_23 stl_14 stl_22">192.168.10.126 &nbsp;</span></div>
+					<div class="stl_01" style="top:26.2735em; left:18.1521em;"><span class="stl_23 stl_14 stl_09">1</span></div>
+					<div class="stl_01" style="top:26.2735em; left:18.5916em;"><span class="stl_23 stl_14 stl_22">92.168.10.129- &nbsp;</span></div>
+					<div class="stl_01" style="top:26.9168em; left:10.1788em;"><span class="stl_23 stl_14 stl_22">VLAN30 &nbsp;</span></div>
+					<div class="stl_01" style="top:29.5314em; left:10.1788em;"><span class="stl_23 stl_14 stl_22">VLAN40 &nbsp;</span></div>
+					<div class="stl_01" style="top:26.9168em; left:28.1653em;"><span class="stl_23 stl_14 stl_22">255.255.255.192 &nbsp;</span></div>
+					<div class="stl_01" style="top:29.5314em; left:28.1653em;"><span class="stl_23 stl_14 stl_22">255.255.255.192 &nbsp;</span></div>
+					<div class="stl_01" style="top:26.9168em; left:35.8685em;"><span class="stl_23 stl_14 stl_22">192.168.10.190 &nbsp;</span></div>
+					<div class="stl_01" style="top:29.5314em; left:35.8685em;"><span class="stl_23 stl_14 stl_22">192.168.10.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:27.56em; left:18.3143em;"><span class="stl_23 stl_14 stl_09">1</span></div>
+					<div class="stl_01" style="top:27.56em; left:18.7538em;"><span class="stl_23 stl_14 stl_22">92.168.10.190 &nbsp;</span></div>
+					<div class="stl_01" style="top:28.8882em; left:18.1521em;"><span class="stl_23 stl_14 stl_22">192.168.10.193- &nbsp;</span></div>
+					<div class="stl_01" style="top:30.1747em; left:18.3143em;"><span class="stl_23 stl_14 stl_09">1</span></div>
+					<div class="stl_01" style="top:30.1747em; left:18.7538em;"><span class="stl_23 stl_14 stl_22">92.168.10.254 &nbsp;</span></div>
+					<div class="stl_01" style="top:32.4024em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:32.4024em; left:6.9083em;"><span class="stl_20 stl_14 stl_21">2</span><span class="stl_19 stl_14 stl_21">）根据需求，选取</span><span class="stl_20 stl_14 stl_21">2</span><span class="stl_19 stl_14 stl_21">台二层交换机</span><span class="stl_20 stl_14 stl_21">S2126G</span><span class="stl_19 stl_14 stl_21">、</span><span class="stl_20 stl_14 stl_21">1</span><span class="stl_19 stl_14 stl_21">台三层交换机</span><span class="stl_20 stl_14 stl_21">S3550</span><span class="stl_19 stl_14 stl_21">； &nbsp;</span></div>
+					<div class="stl_01" style="top:35.0024em; left:5.9083em;"><span class="stl_31 stl_14 stl_17" style="font-weight:bold;">2.</span><span class="stl_32 stl_14 stl_17" style="font-weight:bold;">设计网络拓朴： &nbsp;</span></div>
+					<div class="stl_01" style="top:57.3835em; left:20.3103em;"><span class="stl_25 stl_14 stl_21" style="word-spacing:0.2939em;">图</span><span class="stl_23 stl_14 stl_21" style="word-spacing:0.2939em;">10-2 </span><span class="stl_25 stl_14 stl_21" style="word-spacing:0.2939em;">局域网设计网络拓扑 &nbsp;</span></div>
+					<div class="stl_01" style="top:59.6524em; left:5.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0006em;">3. </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0006em;">设备配置： &nbsp;</span></div>
+					<div class="stl_01" style="top:62.2524em; left:5.9083em;"><span class="stl_19 stl_14 stl_09">（</span></div>
+					<div class="stl_01" style="top:62.2524em; left:6.9083em;"><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0017em;">1</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0017em;">）二层交换机：创建</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0017em;">VLAN </span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0017em;">和</span><span class="stl_20 stl_14 stl_21" style="word-spacing:0.0017em;">Trunk</span><span class="stl_19 stl_14 stl_21" style="word-spacing:0.0017em;">口； &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -48,7 +48,6 @@ public class Generator {
 	}
 	
 	private BufferedImage getBufferedImage(int width, int height, String[] strs, String [] fontNames){
-		File file = new File("C:/Users/温柔的爱/Desktop/image/image.png");
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = (Graphics2D)image.getGraphics();
 		g.setColor(getRandColor(200,250));     
@@ -81,11 +80,6 @@ public class Generator {
 			g.drawLine(x,y,x - xl,y - yl);     
 		}     
 		g.dispose();
-		try {
-			ImageIO.write(image, "png", file);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
 		return image;
 	}
 	

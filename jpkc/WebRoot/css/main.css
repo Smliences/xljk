@@ -1,0 +1,132 @@
+.main{	
+	margin: 1px auto 0px;
+	width: 1100px;
+	margin-top: 15px;
+}
+.main-nav{
+	position: relative;
+}
+.main-nav-header .img{
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.main-nav-header .h4{
+	float: left;
+    margin-left: 50px;
+	font-size: 20px;
+	margin-top: 15px;
+}
+
+.main-nav-li{
+	width: 160px;
+	height: 40px;
+	transition: all .5s; 
+	float: left;
+	background: #13B5B1;
+	margin-top: -15px;
+	position: relative;
+	left: 270px;
+	
+}
+.main-nav-li:hover{
+	background-color:#8BEBE7;
+	cursor: pointer;
+	border-radius:0px 0px 10px 10px ;
+	-webkit-box-shadow: 5px 5px 5px gray;
+}
+ .main-nav-li-link{
+	line-height: 50px;
+	font-size: 16px;
+	color: #000 !important;
+	float: left;
+	margin-left: 15px;
+	transition: all .5s;
+}
+.main-nav-li:hover .main-nav-li-link{
+	color:rgba(0,0,0,0.9) !important;
+}
+.sub-nav{
+	clear: both;
+	margin: 0px auto;
+	background: #13B5B1;
+	width:900px;
+	height:40px;
+	position: relative;
+	left: 2px;
+}
+.sub-nav-p{
+	color:#777;
+	margin-left: 50px;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 1px;
+	line-height: 40px;
+}
+.main-body{
+	margin:0px auto;
+	background: #fff;
+	width:900px;
+	height:1000px;
+}
+
+#main-nav-li-hide{
+	 display: none;
+}
+.hider,.hider_one,.hider_two,.hider_three{
+	cursor: pointer;
+	display: none;
+	width: 160px;
+	height: 35px;
+	line-height: 35px;
+	color: #777777 !important;
+	text-align: center;
+	transition: all .5s;
+	font-size: 12px;
+	top: -10px;
+	position: relative;
+	z-index: 99;
+	background:#84CCC9;
+	clear: both;
+}
+.main-nav-li-zhsx{
+	top: -60px;
+}
+
+.hider:hover{
+	background:  #63C0D2;
+}
+.hider_one:hover{
+	background:  #63C0D2;
+}
+.hider_two:hover{
+	background:  #63C0D2;
+}
+.hider_three:hover{
+	background:  #63C0D2;
+}
+
+
+
+.fly{
+	width: 130px;
+	height: 130px;
+	position: fixed;
+	background: url(../img/tishi.png) no-repeat;
+	bottom:0px;
+	right: 0px;
+	display: block;
+}
+.fly_x{
+	position: absolute;
+	right: 0px;
+}
+.fly_p{
+	color: #FFF;
+	width: 80px;
+	margin-left: 25px;
+	margin-top: 10px;
+	font-weight: bolder;
+}

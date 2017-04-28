@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师登录</title>
+    <link href="css/login.css"  type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <img src="img/logo1.png" class="logo">
+    <img src="img/logo2.png" class="logo2">
+</div>
+<div class="bg">
+        <div class="login">
+             <form name="form" method="post">
+                 <p class="login_p">用户登录</p>
+                <div class="inputs">
+                    <div class="username">用户名<input name="num" type="number" autofocus required placeholder="学号/工号"/></div>
+                    <div class="password">密码<input name="pwd" type="password" required/></div>
+                    <div class="code">验证码<input name="checkcode" type="text" required /><img id="checkImg" class="captchaImage" src="${pageContext.request.contextPath}/checkImg.action"  onclick="change()"  title="点击更换验证码" />
+</div>
+                </div>
+                <div class="actions">
+                    <input type="submit" class="submit" value="登 录">
+                    <input type="reset" class="reset" value="重 置">
+                </div>
+                <div class="button">
+                	<p class="registered"><a href="registered.html">免费注册</a></p>
+                </div>
+            </form>
+        </div>
+</div>
+<div class="footer">
+    <div class="footer-1">
+    安阳工学院
+    </div>
+</div>
+</body>
+</html>

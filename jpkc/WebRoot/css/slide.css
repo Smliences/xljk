@@ -1,0 +1,14 @@
+.carousel{
+	width: 850px;
+	height: 566px;
+}
+.carousel-control-left{
+	position: absolute;
+	top: 235px;
+	font-size: 50px ;
+}
+.carousel-control-right{
+	position: absolute;
+	top: 235px;
+	font-size: 50px ;
+}

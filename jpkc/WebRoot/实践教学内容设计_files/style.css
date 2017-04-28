@@ -1,0 +1,134 @@
+sup {
+	: baseline;
+	: relative;
+	: -0.4em;
+}
+sub {
+	: baseline;
+	: relative;
+	: 0.4em;
+}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+@media screen and (min-device-pixel-ratio:0), (-webkit-min-device-pixel-ratio:0), (min--moz-device-pixel-ratio: 0) { .view { font-size:10em; transform:scale(0.1); -moz-transform:scale(0.1); -webkit-transform:scale(0.1); -moz-transform-origin:top left; -webkit-transform-origin:top left; } }
+.layer { }.ie { font-size: 1pt; }
+.ie body { font-size: 12em; }
+.stl_01 {
+	position: absolute;
+	white-space: nowrap;
+}
+.stl_02 {
+	border-style: none;
+	height: 70.08334em;
+	width: 49.58333em;
+	margin: 0em;
+	line-height: 0.0em;
+	font-size: 1em;
+	display: block;
+}
+.stl_03 {
+	position: relative;
+	width: 49.58333em;
+}
+.stl_04 {
+	height: 7.008333em;
+}
+.ie .stl_04 {
+	height: 70.08334em;
+}
+.stl_05 {
+	color: #000000;
+	font-size: 1.5em;
+	font-family: "Times New Roman";
+}
+.stl_06 {
+	line-height: 1.107422em;
+}
+.stl_07 {
+	letter-spacing: 0em;
+}
+
+.ie .stl_07 {
+	letter-spacing: 0px;
+}
+@font-face {
+	font-family:"DVEONH+SimHei";
+	src:url("24d73254-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_08 {
+	color: #000000;
+	font-size: 1em;
+	font-family: "DVEONH+SimHei", "Times New Roman";
+}
+.stl_09 {
+	line-height: 1em;
+}
+.stl_10 {
+	letter-spacing: -0.0002em;
+}
+
+.ie .stl_10 {
+	letter-spacing: -0.0034px;
+}
+@font-face {
+	font-family:"VAJVOB+MicrosoftYaHei";
+	src:url("80bb36d1-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_11 {
+	color: #000000;
+	font-size: 1em;
+	font-family: "VAJVOB+MicrosoftYaHei", "Times New Roman";
+}
+.stl_12 {
+	line-height: 1.319824em;
+}
+@font-face {
+	font-family:"JHJKPW+MicrosoftYaHei";
+	src:url("f50bbf33-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_13 {
+	color: #000000;
+	font-size: 1em;
+	font-family: "JHJKPW+MicrosoftYaHei";
+}
+.stl_14 {
+	letter-spacing: -0.0001em;
+}
+
+.ie .stl_14 {
+	letter-spacing: -0.0022px;
+}
+@font-face {
+	font-family:"FPGEPM+TimesNewRomanPSMT";
+	src:url("f3ffb5ad-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_15 {
+	color: #000000;
+	font-size: 1em;
+	font-family: "FPGEPM+TimesNewRomanPSMT";
+}
+@font-face {
+	font-family:"JIGTFC+SimHei,Bold";
+	src:url("5ab091c6-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_16 {
+	color: #000000;
+	font-size: 1.166667em;
+	font-family: "JIGTFC+SimHei,Bold", "Times New Roman";
+}
+@font-face {
+	font-family:"HRDGVD+SimHei";
+	src:url("6a246147-0000-0000-0000-000000000000.woff") format("woff");
+}
+.stl_17 {
+	color: #000000;
+	font-size: 1em;
+	font-family: "HRDGVD+SimHei", "Times New Roman";
+}
+.stl_18 {
+	letter-spacing: -0.0003em;
+}
+
+.ie .stl_18 {
+	letter-spacing: -0.0053px;
+}

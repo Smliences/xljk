@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="GBK">
+		<title>用户注册</title>
+		<link rel="stylesheet" href="css/registered.css" />
+	</head>
+	<body>
+		<div class="registered_p">用户注册</div>	
+		<div class="hr"></div>
+		<div id="box">
+			<div id="form_top">
+				<p class="p_show">老师注册</p>
+				<p>学生注册</p>
+			</div>
+			<div id="form_buttom">
+				<form action="" class="form_show">
+					工&nbsp;号：<input name="num" type="number" autofocus required/><br>
+					姓&nbsp;名：<input name="name" type="text" required/><br>
+					密&nbsp;码：<input name="pwd" type="password" required/><br>
+					部&nbsp;门：<input name="dept" type="text" required/><br>
+					<input class="submit" type="submit" value="提交">
+					<div class="goLogin"><a href="Login.html">去登陆</a></div>
+				</form>
+				<form action="">
+					学&nbsp;号：<input name="num" type="number" autofocus required/><br>
+					姓&nbsp;名：<input name="name" type="text" required/><br>
+					密&nbsp;码：<input name="pwd" type="password" required/><br>
+					专&nbsp;业：<input name="pro" type="text" required/><br>
+					班&nbsp;级：<input name="cls" type="text" required/><br>
+					<input class="submit" type="submit" value="提交">
+					<div class="goLogin"><a href="Login.html">去登陆</a></div>
+				</form>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+			window.onload = function(){
+				var ps = document.getElementsByTagName("p");
+				var forms = document.getElementById("form_buttom").getElementsByTagName("form");
+				for(var i = 0;i < ps.length;i++){
+					ps[i].index = i;
+					ps[i].onclick = function(){
+						for(var j = 0;j < ps.length;j++){
+							ps[j].className = "";
+							forms[j].className = "";
+						}
+						this.className = "p_show";
+						forms[this.index].className = "form_show";
+					}
+				}
+			}
+		</script>
+</html>
