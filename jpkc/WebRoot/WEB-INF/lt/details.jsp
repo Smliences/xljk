@@ -4,6 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
+	<style type="text/css">
+		
+			
+	</style>
 	<head>
 		<meta charset="utf-8">
 		<title>论题详情页面</title>
@@ -15,7 +19,8 @@
 			<div class="details_hr"></div>
 			<div class="details_content">${content }<p class="details_content_p"></p></div>
 		</div>
-		评论列表<br>
+		<div id="comment">评论列表</div>
+		<br>
 		<c:if test="${replyList!=null}">
 			<c:forEach items="${replyList}" var="a" varStatus="number">
 				${number.count}L.&nbsp;${a.user.name}&nbsp;

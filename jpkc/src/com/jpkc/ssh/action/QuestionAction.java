@@ -94,4 +94,8 @@ public class QuestionAction extends ActionSupport implements ModelDriven<Questio
 		ServletActionContext.getContext().put("touserList", touserList);
 		return "detail";
 	}
+	public String zytj() throws Exception{
+		return "zytj";
+		
+	}
 }

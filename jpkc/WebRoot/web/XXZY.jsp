@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="nav-li"><a href="WLKT.html">网络课堂</a></li>
 				<li class="nav-li"><a href="#">学习资源</a></li>
 				<li class="nav-li"><a href="ZYTJ.html">作业提交</a></li>
-				<li class="nav-li"><a href="../web_SSLT/Login.html">师生论坛</a></li>
+				<li class="nav-li"><a href="question_toLT.action">师生论坛</a></li>
 			</ul>
 		</div>
 		<div class="navButton_line"></div>

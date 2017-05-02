@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="GBK">
 		<title>师生交流论坛</title>
-		<link rel="stylesheet" type="text/css" href="css/review.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/review.css"/>
 	</head>
 	<body>
 	

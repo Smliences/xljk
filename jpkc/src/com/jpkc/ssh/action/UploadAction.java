@@ -30,7 +30,7 @@ public class UploadAction extends ActionSupport implements ServletContextAware{
     public String execute() throws Exception {
 		String path = this.context.getRealPath("/upload");
     	FileUtil.saveFile(path, upload, uploadFileName, username);
-        return SUCCESS;
+        return "success";
     }
 
 	public void setServletContext(ServletContext context) {

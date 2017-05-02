@@ -13,8 +13,9 @@
 		</global-results>
 		<action name="user_*" class="com.jpkc.ssh.action.UserAction" method="{1}">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="msg" type="redirectAction">question_toLT.action</result>
+			<result name="index">/index.html</result>
 			<result name="login">/login.jsp</result>
+		
 		</action>
 		
 		<action name="checkImg" class="com.jpkc.ssh.action.CheckImgAction">
@@ -25,7 +26,7 @@
 
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-
+			<result name="zytj">/web/ZYTJ.jsp</result>
 			<result name="lt">/WEB-INF/lt/questionlist.jsp</result>
 			<result name="tolt" type="redirectAction">question_toLT.action</result>
 			<result name="toPublishPage">/WEB-INF/lt/publish.jsp</result>

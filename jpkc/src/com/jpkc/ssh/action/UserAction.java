@@ -64,10 +64,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		if(existUser!=null&&existcheckcode.equalsIgnoreCase(checkcode)){
 			session.setAttribute("existUser", existUser);
 			
-			return "msg";
+			return "index";
 		}
 		
 		return "login";
 		
 	}
+	
+	
 }

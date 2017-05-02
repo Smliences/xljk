@@ -8,6 +8,9 @@
   	<interceptors>
 		<interceptor name="interceptor" class="com.jpkc.ssh.interceptor.Interceptor"></interceptor>
 	</interceptors>
+	<global-results>
+			<result name="input">/login.jsp</result>
+		</global-results>
   		<action name="download" class="downloadAction">
   			<interceptor-ref name="interceptor"></interceptor-ref>
   			<interceptor-ref name="defaultStack"></interceptor-ref>
@@ -40,7 +43,7 @@
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 			<result name="input">/error.jsp</result>
-			<result name="list">/WEB-INF/jsp/fileList.jsp</result>
+			<result name="list">/web_iframe/ZYTJ.jsp</result>
 			<result name="tolist" type="redirectAction">file_getAllFileMessage.action</result>
 			<result name="upload">/WEB-INF/jsp/fileUpload.jsp</result>
 		</action>
