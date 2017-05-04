@@ -22,13 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<!--	<div class="nav-left"></div>-->
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="../index.html">首页</a></li>
-				<li class="nav-li"><a href="KCJS.html">课程介绍</a></li>
-				<li class="nav-li"><a href="JXDW.html">教学队伍</a></li>
-				<li class="nav-li"><a href="JXTJ.html">教学条件</a></li>
-				<li class="nav-li"><a href="JXNR.html">教学内容</a></li>
-				<li class="nav-li"><a href="JXXG.html">教学效果</a></li>
-				<li class="nav-li"><a href="WLKT.html">网络课堂</a></li>
-				<li class="nav-li"><a href="XXZY.html">学习资源</a></li>
+				<li class="nav-li"><a href="/jpkc/web/KCJS.html">课程介绍</a></li>
+				<li class="nav-li"><a href="/jpkc/web/JXDW.html">教学队伍</a></li>
+				<li class="nav-li"><a href="/jpkc/web/JXTJ.html">教学条件</a></li>
+				<li class="nav-li"><a href="/jpkc/web/JXNR.html">教学内容</a></li>
+				<li class="nav-li"><a href="/jpkc/web/JXXG.html">教学效果</a></li>
+				<li class="nav-li"><a href="/jpkc/web/WLKT.html">网络课堂</a></li>
+				<li class="nav-li"><a href="/jpkc/web/XXZY.html">学习资源</a></li>
 				<li class="nav-li"><a href="#">作业提交</a></li>
 				<li class="nav-li"><a href="question_toLT.action">师生论坛</a></li>
 			</ul>
@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<p class="sub-nav-p">作业提交</p>
 			</div>	
 			<div class="main-body">
-				<iframe src="${pageContext.request.contextPath }/file_getAllFileMessage.action" width="900px" height="1000px" name="show">
+				<iframe src="${pageContext.request.contextPath }/work_toStuList.action" width="900px" height="1000px" name="show">
 				</iframe>
 			</div>
 		</div>

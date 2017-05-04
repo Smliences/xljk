@@ -50,7 +50,7 @@
 		<action name="work_*" class="workAction" method="{1}">
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="stuList">/WEB-INF/jsp/stuList.jsp</result>
+			<result name="stuList">/web_iframe/ZYTJ.jsp</result>
 			<result name="list">/web_iframe/ZYTJ.jsp</result>
 			<result name="works">/WEB-INF/jsp/fileList.jsp</result>
 		</action>
