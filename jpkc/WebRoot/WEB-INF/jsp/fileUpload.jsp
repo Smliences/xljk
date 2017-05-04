@@ -44,7 +44,7 @@
 		<form action="${pageContext.request.contextPath}/upload.action" method="post" enctype="multipart/form-data">
 	  		<!-- 防止表单重复提交 -->
 	  		<s:token></s:token>
-	  		<s:hidden name="username" value="%{username}"></s:hidden>
+	  		<s:hidden name="userid" value="%{userid}"></s:hidden>
 	  		<input type="file" id="upload" onchange="this.form.submit()" name="upload" size="1">
 	  		<button type="submit" class="ZYSC_button" onmousemove="move(event)" value="请选择文件">作业上传</button>
   		</form>

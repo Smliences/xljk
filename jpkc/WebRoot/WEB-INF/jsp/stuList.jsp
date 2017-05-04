@@ -6,7 +6,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>所有作业</title>
+		<title>学生作业列表</title>
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
 		<style>
@@ -42,29 +42,29 @@
 
 	<body>
 		<div class="box">
-			<p>作业详情</p>
+			<p>学生作业列表</p>
 			<table border="1">
 				<tr>
-					<th width="200px">序号</th>
-					<th width="200px">作业名称</th>
-					<th width="500px">提交时间</th>
-					<th width="120px" colspan="2">操作</th>
+					<th width="100px">序号</th>
+					<th width="100px">学生学号</th>
+					<th width="200px">学生姓名</th>
+					<th width="500px">提交次数</th>
+					<th width="120px">操作</th>
 				</tr>
-				<s:if test="#works.size()==0">
+				<s:if test="#stuList.size()==0">
 					<tr>
-						<td colspan="4" align="center">暂未提交作业</td>
+						<td colspan="4" align="center">暂无学生信息</td>
 					</tr> 
 				</s:if>
 				
-				
 				<s:else>
-					<s:iterator value="#works" status="work">
+					<s:iterator value="#stuList" status="work">
 						<tr>
 							<td> <s:property value="#work.count"/> </td>
-							<td> <s:property value="name"/> </td>
-							<td> <s:property value="time"/> </td>
-							<td align="center"> <s:a action="download.action?filename=%{name}&workid=%{wid}">下载</s:a> </td>
-			    			<td align="center"> <s:a action="file_deleteFile.action?wid=%{wid}">删除</s:a> </td>
+							<td> <s:property value="usernum"/> </td>
+							<td> <s:property value="username"/> </td>
+							<td align="center"> <s:property value="submitCount"/> </td>
+			    			<td align="center"> <s:a action="work_detail.action?userid=%{userid}">查看详情</s:a> </td>
 						</tr>
 					</s:iterator>
 				</s:else>

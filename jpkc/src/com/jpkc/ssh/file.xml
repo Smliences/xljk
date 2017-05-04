@@ -42,10 +42,17 @@
 		<action name="file_*" class="fileAction" method="{1}">
 			<interceptor-ref name="interceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-			<result name="input">/error.jsp</result>
 			<result name="list">/web_iframe/ZYTJ.jsp</result>
-			<result name="tolist" type="redirectAction">file_getAllFileMessage.action</result>
+			<result name="tolist" type="redirectAction">work_detail.action</result>
 			<result name="upload">/WEB-INF/jsp/fileUpload.jsp</result>
+		</action>
+		
+		<action name="work_*" class="workAction" method="{1}">
+			<interceptor-ref name="interceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="stuList">/WEB-INF/jsp/stuList.jsp</result>
+			<result name="list">/web_iframe/ZYTJ.jsp</result>
+			<result name="works">/WEB-INF/jsp/fileList.jsp</result>
 		</action>
 		
   	</package>

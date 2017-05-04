@@ -1,15 +1,19 @@
 package com.jpkc.ssh.action;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
 import org.apache.struts2.util.ServletContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.jpkc.ssh.entity.Work;
+import com.jpkc.ssh.service.WorkService;
 import com.jpkc.ssh.utils.FileUtil;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -18,21 +22,24 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DownloadAction extends ActionSupport implements ServletContextAware {
 	private static final long serialVersionUID = 1L;
 
+	@Resource(name="workService")
+	private WorkService workService;
+	
 	private ServletContext context;
 
 	private String filename;
 
 	private String mimeType;
 	
-	private String fileFlag;
+	private Integer workid;
 
 	private InputStream inStream;
 
 	@Override
 	public String execute() throws Exception {
 		this.mimeType = context.getMimeType(filename);
-		String path = this.context.getRealPath("/upload");
-		this.inStream = new FileInputStream(FileUtil.getFile(path, fileFlag));
+		File file = workService.getFile(workid);
+		this.inStream = new FileInputStream(file);
 		if (this.inStream == null) {
 			return ERROR;
 		}
@@ -65,10 +72,13 @@ public class DownloadAction extends ActionSupport implements ServletContextAware
 	public void setServletContext(ServletContext context) {
 		this.context = context;
 	}
-	
-	
-	public void setFileFlag(String fileFlag) {
-		this.fileFlag = fileFlag;
+
+	public Integer getWorkid() {
+		return workid;
 	}
 
+	public void setWorkid(Integer workid) {
+		this.workid = workid;
+	}
+	
 }

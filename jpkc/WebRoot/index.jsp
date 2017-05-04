@@ -17,7 +17,7 @@
 <a href="${pageContext.request.contextPath }/file_toUpload.action">提交作业</a>
 
 
-<a href="${pageContext.request.contextPath }/file_getAllFileMessage.action">查看作业</a>
+<a href="${pageContext.request.contextPath }/work_toStuList.action">查看作业</a>
 
 </body>
 </html>

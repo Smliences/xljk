@@ -18,7 +18,6 @@ import com.jpkc.ssh.entity.User;
 import com.jpkc.ssh.utils.Page;
 
 
-
 @Repository("dao")
 public class BaseDaoImpl implements BaseDao{
 	@Resource
@@ -107,6 +106,11 @@ public class BaseDaoImpl implements BaseDao{
 	public User findById(Integer id) {
 		User user =  hibernateTemplate.get(User.class, id);
 		return user;
+	}
+
+
+	public List<User> getUserByRole(Boolean role) {
+		return (List<User>) this.hibernateTemplate.find("from User where role = ?", role);
 	}
 
 

@@ -34,4 +34,6 @@ public interface BaseDao{
 
 	public User findById(Integer id);
 
+	public List<User> getUserByRole(Boolean role);
+
 }

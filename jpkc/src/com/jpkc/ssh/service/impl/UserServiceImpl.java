@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService{
 
 	public void save(User user) {
 		dao.save(user);
-		
 	}
 
 	public <T> List<T> find(String hql, Class<T> entityClass, Object[] params) {
@@ -75,6 +74,9 @@ public class UserServiceImpl implements UserService{
 		return dao.findById(id);
 		
 	}
-	 
+
+	public List<User> getAllStudent() {
+		return this.dao.getUserByRole(false);
+	}
 
 }

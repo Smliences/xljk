@@ -1,25 +1,32 @@
 package com.jpkc.ssh.action;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletContext;
-import org.apache.commons.io.FileUtils;
+
 import org.apache.struts2.util.ServletContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.jpkc.ssh.utils.FileUtil;
+import com.jpkc.ssh.entity.Work;
+import com.jpkc.ssh.service.WorkService;
 import com.opensymphony.xwork2.ActionSupport;
 
 @Controller("uploadAction")
 @Scope("prototype")
 public class UploadAction extends ActionSupport implements ServletContextAware{
+	
+	@Resource(name="workService")
+	private WorkService workService;
     
 	private static final long serialVersionUID = -371529801135206288L;
 
 	private ServletContext context;
 	
-	private String username; 
+	private Integer userid;
 
 	private File upload;
 	
@@ -28,8 +35,16 @@ public class UploadAction extends ActionSupport implements ServletContextAware{
 	private String uploadFileName;
  
     public String execute() throws Exception {
-		String path = this.context.getRealPath("/upload");
-    	FileUtil.saveFile(path, upload, uploadFileName, username);
+    	//创建work,设置属性值
+		String path = this.context.getRealPath("/upload/" + userid + "/" + uploadFileName);
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = simpleDateFormat.format(new Date());
+		Work work = new Work();
+		work.setUid(userid);
+		work.setName(uploadFileName);
+		work.setPath(path);
+		work.setTime(time);
+		this.workService.saveWork(work, upload);
         return "success";
     }
 
@@ -37,12 +52,12 @@ public class UploadAction extends ActionSupport implements ServletContextAware{
 		this.context = context;
 	}
 
-	public String getUsername() {
-		return username;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 
 	public File getUpload() {
