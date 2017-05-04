@@ -9,11 +9,16 @@
 		<meta charset="GBK">
 		<title>师生交流论坛</title>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/review.css"/>
+		<style>
+			.box{
+				height:860px;
+			}
+		</style>
 	</head>
 	<body>
 	
 	<form action="${pageContext.request.contextPath }/question_toPublishPage.action" method="post">
-	<input type="submit" value="发表问题"/>
+	<input class="ssjl_submit" type="submit" value="发表问题"/>
 	</form>
 		<div class="box">
 			<div class="box_top">师生交流论坛</div>

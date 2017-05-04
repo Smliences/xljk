@@ -49,6 +49,7 @@
 				<value>com/jpkc/ssh/entity/Question.hbm.xml</value>
 				<value>com/jpkc/ssh/entity/Reply.hbm.xml</value>
 				<value>com/jpkc/ssh/entity/User.hbm.xml</value>
+				<value>com/jpkc/ssh/entity/Work.hbm.xml</value>
 			</list>
 		</property> 
 

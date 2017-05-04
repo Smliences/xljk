@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 	<style type="text/css">
-		
+	
 			
 	</style>
 	<head>
@@ -19,10 +19,13 @@
 			<div class="details_hr"></div>
 			<div class="details_content">${content }<p class="details_content_p"></p></div>
 		</div>
+		
+		<div class="pinglunlb">
 		<div id="comment">评论列表</div>
 		<br>
 		<c:if test="${replyList!=null}">
 			<c:forEach items="${replyList}" var="a" varStatus="number">
+			<div class="pinglun">
 				${number.count}L.&nbsp;${a.user.name}&nbsp;
 			    <!-- 判断是否是二级评论 -->
 			    <c:if test="${a.touser!=null}">
@@ -31,8 +34,9 @@
 			    		<c:if test="${b.uid==a.touser}">@${b.name}</c:if>
 			    	</c:forEach>
 			    </c:if>
-			    :&nbsp;${a.content }
-			    &nbsp;&nbsp;<a href="javascript:void(0)" onclick="replyshow('${number.count}')" >回复</a>
+			   :&nbsp;${a.content }
+			    &nbsp;&nbsp;<a class="huifu" href="javascript:void(0)" onclick="replyshow('${number.count}')" >回复</a>
+			</div>
 			    <!-- 发表评论的隐藏的输入框 -->
 			    <div>
 			 		<div id="reply${number.count}" class="reply" style="display: none;">
@@ -41,9 +45,9 @@
 						<input hidden="hidden" name="touser" value="${a.user.uid}"/>
 						<div>
 							<div>
-								<textarea cols="20" rows="1" name="content"></textarea>
+								<textarea class="huifu_text" cols="20" rows="1" name="content"></textarea>
 							</div>
-							<input type="submit"  name="submit" value="发表评论"/>
+							<input class="huifu_submit" type="submit"  name="submit" value="发表评论"/>
 						</div>
 						</form>
 			 		</div>
@@ -53,6 +57,8 @@
 		<c:if test="${replyList==null}">
 			暂无用户评论
 		</c:if>
+		
+		</div>
 		<div>
 			<form action="${pageContext.request.contextPath }/reply_publish.action" method="post">
 			<input hidden="hidden" name="qid" value="${qid }"/>

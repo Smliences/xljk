@@ -10,7 +10,7 @@ import com.jpkc.ssh.utils.Page;
 
 
 
-public interface BaseDao {
+public interface BaseDao{
 
 	
 	public <T> List<T> find(String hql, Class<T> entityClass, Object[] params);

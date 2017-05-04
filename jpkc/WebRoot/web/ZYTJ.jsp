@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<p class="sub-nav-p">作业提交</p>
 			</div>	
 			<div class="main-body">
-				<iframe src="${pageContext.request.contextPath}/file_getAllFileMessage.action" width="900px" height="1000px" name="show">
+				<iframe src="${pageContext.request.contextPath }/file_getAllFileMessage.action" width="900px" height="1000px" name="show">
 				</iframe>
 			</div>
 		</div>
