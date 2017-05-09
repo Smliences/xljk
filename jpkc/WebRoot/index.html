@@ -5,21 +5,49 @@
 		<meta charset="utf-8" />
 		 <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>计算机网络工程精品课程</title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" href="css/nav.css" />
 		<link rel="stylesheet" type="text/css" href="css/slide.css" />
 		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ipad.css"/>
+		<link rel="stylesheet" type="text/css" href="css/phone.css"/>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/phone-nav.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/slide.js"></script>
-
+		
+		
+	
 	</head>
 	<body>
 		<div class="header"></div>
+		<div class="login"><a href="/jpkc/login.jsp">登录</a>/<a href="/jpkc/regist.jsp">注册</a></div>
 		<div class="nav">
-			<!--	<div class="nav-left"></div>-->
+			<div class="phone-nav">
+				<div class="phone-nav-p">网络课程</div>
+				<div class="phone-nav-log" id="phone_nav_log">
+					<span class="nav-log"></span>
+					<span class="nav-log"></span>
+					<span class="nav-log"></span>
+				</div>
+				
+				<ul class="phone-nav-ul" id="phone_nav_ul">
+					<li class="phone-nav-li"><a href="#">首页</a></li>
+					<li class="phone-nav-li"><a href="web/KCJS.html">课程介绍</a></li>
+					<li class="phone-nav-li"><a href="web/JXDW.html">教学队伍</a></li>
+					<li class="phone-nav-li"><a href="web/JXTJ.html">教学条件</a></li>
+					<li class="phone-nav-li"><a href="web/JXNR.html">教学内容</a></li>
+					<li class="phone-nav-li"><a href="web/JXXG.html">教学效果</a></li>
+					<li class="phone-nav-li"><a href="web/WLKT.html">网络课堂</a></li>
+					<li class="phone-nav-li"><a href="web/XXZY.html">学习资源</a></li>
+					<li class="phone-nav-li"><a href="question_zytj.action">作业提交</a></li>
+					<li class="phone-nav-li"><a href="question_toLT.action">师生论坛</a></li>
+				</ul>
+			</div>
+			
+			
 			<ul class="nav-ul" >
 				<li class="nav-li"><a href="#">首页</a></li>
 				<li class="nav-li"><a href="web/KCJS.html">课程介绍</a></li>
@@ -33,7 +61,10 @@
 				<li class="nav-li"><a href="question_toLT.action">师生论坛</a></li>
 				
 			</ul>
+			
 		</div>
+		
+		
 		<div class="navButton_line"></div>
 
 		

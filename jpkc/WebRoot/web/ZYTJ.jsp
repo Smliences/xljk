@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 	<body>
 		<div class="header"></div>
+		<div class="login"><a href="jpkc/login.jsp">登录</a>/<a href="jpkc/regist.jsp">注册</a></div>
 		<div class="nav">
 			<!--	<div class="nav-left"></div>-->
 			<ul class="nav-ul">

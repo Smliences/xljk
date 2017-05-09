@@ -1,29 +1,86 @@
 @media only screen and (max-width: 1280px) {
-	.container{
+.container{
 	width: 100%;
 	height: auto;
 	padding: 0px !important;
 	margin: 0px !important;
 }
-
-
 .container-botton{
 	width: 100%;
-	height: 1090px;/*566+534*/
 	margin-top: 3px;
 }
 .container-botton-first{
 	float: left;
 	width: 850px;
-	height: 566px;
-	margin-top: 15px;
+	height: auto;
+	margin-left: 10%;
 }
-.container-botton-second{
-	width: 410px;
-	height: 566px;
+.container-botton-second,.container-botton-fourth,.container-botton-third{
+	width: 80%;
+	height:auto;
+	padding-bottom: 50px;
 	float: left;
-	margin-left: 15px;
+	margin-left:10%;
 	margin-top: 15px;
-	background: #e97659;
 }
+.container-botton-second-context1{
+	margin-top: 100px;
+}
+.container-botton-fone,.container-botton-ftwo,.container-botton-fthird{
+	width: 80%;
+	height: auto;
+	margin-left: 10%;
+	padding-bottom: 50px;
+}
+.container-botton-fone-img,.container-botton-ftwo-img,.container-botton-fthree-img{
+	margin-left: 30%;
+}
+
+/*导航栏*/
+.nav-ul{
+	display: none;
+}
+.phone-nav{
+	background: #ddd;
+	width: 100%;
+	height: 50px;
+	display: block;
+}
+.phone-nav-p{
+	margin-left: 5%;
+	float: left;
+	font-size: 2rem;
+	line-height: 50px;
+}
+.phone-nav-log{
+	cursor: pointer;
+	width:50px;
+	height: 35px;
+	float: right;
+	margin-right: 5%;
+	margin-top: 8px;
+	background: #ccc;
+}
+.phone-nav-log .nav-log{
+	display: block;
+	width: 35px;
+	height: 2px;
+	margin: 7px auto;
+	background: #666;
+}
+
+.phone-nav-ul{
+	display: none;
+	float: left;
+	width: 100%;
+	background: rgba(169,169,169,0.2);
+	z-index: 5;
+}
+.phone-nav-ul .phone-nav-li{
+	width: 100%;
+	height: 38px;
+	margin-left: 10%;
+}
+
+
 }

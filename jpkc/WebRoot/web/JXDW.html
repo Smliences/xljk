@@ -7,17 +7,46 @@
 		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/footer.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/ipad.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/phone.css"/>
+		<script src="../js/jquery-1.10.2.min.js"></script>
+		<script src="../js/phone-nav.js"></script>
 		<script src="../js/close.js"></script>
+	
 	</head>
 	<body>
 		<div class="header"></div>
+		<div class="login"><a href="/jpkc/login.jsp">登录</a>/<a href="/jpkc/regist.jsp">注册</a></div>
 		<div class="nav">
-			<!--	<div class="nav-left"></div>-->
+			
+			
+			<div class="phone-nav">
+				<div class="phone-nav-p">网络工程</div>
+				<div class="phone-nav-log" id="phone_nav_log">
+					<span class="nav-log"></span>
+					<span class="nav-log"></span>
+					<span class="nav-log"></span>
+				</div>
+				
+				<ul class="phone-nav-ul" id="phone_nav_ul">
+					<li class="phone-nav-li"><a href="../index.html">首页</a></li>
+					<li class="phone-nav-li"><a href="KCJS.html">课程介绍</a></li>
+					<li class="phone-nav-li"><a href="#">教学队伍</a></li>
+					<li class="phone-nav-li"><a href="JXTJ.html">教学条件</a></li>
+					<li class="phone-nav-li"><a href="JXNR.html">教学内容</a></li>
+					<li class="phone-nav-li"><a href="JXXG.html">教学效果</a></li>
+					<li class="phone-nav-li"><a href="WLKT.html">网络课堂</a></li>
+					<li class="phone-nav-li"><a href="XXZY.html">学习资源</a></li>
+					<li class="phone-nav-li"><a href="ZYTJ.html">作业提交</a></li>
+					<li class="phone-nav-li"><a href="../wweb_SSLT/Login.html">师生论坛</a></li>
+				</ul>
+			</div>
+			
 			<ul class="nav-ul">
 				<li class="nav-li"><a href="../index.html">首页</a></li>
 				<li class="nav-li"><a href="KCJS.html">课程介绍</a></li>
 				<li class="nav-li"><a href="#">教学队伍</a></li>
-				<li class="nav-li"><a href="${pageContext.request.contextPath}/JXTJ.html">教学条件</a></li>
+				<li class="nav-li"><a href="JXTJ.html">教学条件</a></li>
 				<li class="nav-li"><a href="JXNR.html">教学内容</a></li>
 				<li class="nav-li"><a href="JXXG.html">教学效果</a></li>
 				<li class="nav-li"><a href="WLKT.html">网络课堂</a></li>
@@ -31,6 +60,10 @@
 		
 		
 		<div class="main">
+			<div class="sub-nav">
+				<img class="sub-nav-log" src="../img/sy.png">
+				<p class="sub-nav-p">教学队伍</p>
+			</div>
 			<div class="main-nav">
 				
 				<div class="main-nav-li"><a href="../web_iframe/JXDW_kcfz.html" target="js" class="main-nav-li-link">课程负责人</a></div>
@@ -38,9 +71,7 @@
 				<div class="main-nav-li"><a href="../web_iframe/JXDW_jxdw.html" target="js" class="main-nav-li-link">教学队伍</a></div>
 				<div class="main-nav-li"><a href="../web_iframe/JXDW_dwjx.html" target="js" class="main-nav-li-link">队伍教学与科研成果</a></div>
 			</div>
-			<div class="sub-nav">
-				<p class="sub-nav-p">教学队伍</p>
-			</div>	
+				
 			<div class="main-body">
 				<iframe src="../web_iframe/JXDW_kcfz.html" name="js" width="900px" height="1000px" ></iframe>
 			</div>

@@ -3,7 +3,7 @@
 	margin: 0px;
 }
 body{
-	background: #fff;	
+	background: #EEEEEE;	
 	width: 800px;
 	height: auto;
 	margin: 30px auto;
@@ -21,6 +21,9 @@ p{
 	text-indent: 2em;
 	margin: 10px 30px;
 	line-height: 30px;
+}
+.showImg{
+	text-align: center;
 }
 .showImg img{
 	transition:all 0.4s;

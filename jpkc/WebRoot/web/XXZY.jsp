@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</head>
 	<body>
 		<div class="header"></div>
+		<div class="login"><a href="/jpkc/login.jsp">登录</a>/<a href="/jpkc/regist.jsp">注册</a></div>
 		<div class="nav">
 			<!--	<div class="nav-left"></div>-->
 			<ul class="nav-ul">
@@ -29,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li class="nav-li"><a href="JXXG.html">教学效果</a></li>
 				<li class="nav-li"><a href="WLKT.html">网络课堂</a></li>
 				<li class="nav-li"><a href="#">学习资源</a></li>
-				<li class="nav-li"><a href="ZYTJ.html">作业提交</a></li>
+				<li class="nav-li"><a href="ZYTJ.jsp">作业提交</a></li>
 				<li class="nav-li"><a href="question_toLT.action">师生论坛</a></li>
 			</ul>
 		</div>
